@@ -1,0 +1,16 @@
+VERDANT GITHUB PAGES URL PATTERNS
+
+Site:
+https://YOUR_USERNAME.github.io/verdant-media/
+
+Poster:
+https://YOUR_USERNAME.github.io/verdant-media/posters/FILENAME.jpg
+
+Backdrop:
+https://YOUR_USERNAME.github.io/verdant-media/backdrops/FILENAME.jpg
+
+Banner:
+https://YOUR_USERNAME.github.io/verdant-media/banners/FILENAME.jpg
+
+Remote config (future):
+https://YOUR_USERNAME.github.io/verdant-media/config/verdant-config.json
