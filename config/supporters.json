@@ -1,0 +1,36 @@
+{
+  "headline": "SUPPORT VERDANT",
+  "description": "Support helps keep Verdant maintained, hosted and improving. The core world stays available to everyone; supporter perks focus on recognition, community access and optional cosmetics.",
+  "membership": "PATREON / SETUP READY",
+  "updated": "2026-10-03",
+  "supporters": [],
+  "tiers": [
+    {
+      "name": "Supporter",
+      "price": "\u00a33 / month",
+      "perks": [
+        "Name on the supporter board",
+        "Discord supporter role",
+        "Verdant supporter badge"
+      ]
+    },
+    {
+      "name": "VIP",
+      "price": "\u00a35 / month",
+      "perks": [
+        "Everything in Supporter",
+        "VIP world access or cosmetics",
+        "Extra Verdant themes when configured"
+      ]
+    },
+    {
+      "name": "Founder",
+      "price": "\u00a310 / month",
+      "perks": [
+        "Everything in VIP",
+        "Early testing recognition",
+        "Founder badge / credits"
+      ]
+    }
+  ]
+}
