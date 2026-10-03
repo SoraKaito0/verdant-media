@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "notes": "Upload poster art as ads/posters/ad-01.png through ad-06.png. Enable only slots that have an image.",
+  "entries": [
+    {
+      "slot": 1,
+      "enabled": false,
+      "label": "Community spotlight",
+      "sponsor": "Verdant Community",
+      "seconds": 12
+    },
+    {
+      "slot": 2,
+      "enabled": false,
+      "label": "World / event promotion",
+      "sponsor": "Community",
+      "seconds": 12
+    },
+    {
+      "slot": 3,
+      "enabled": false,
+      "label": "Supporter spotlight",
+      "sponsor": "Community",
+      "seconds": 12
+    },
+    {
+      "slot": 4,
+      "enabled": false,
+      "label": "Poster slot 4",
+      "sponsor": "Community",
+      "seconds": 12
+    },
+    {
+      "slot": 5,
+      "enabled": false,
+      "label": "Poster slot 5",
+      "sponsor": "Community",
+      "seconds": 12
+    },
+    {
+      "slot": 6,
+      "enabled": false,
+      "label": "Poster slot 6",
+      "sponsor": "Community",
+      "seconds": 12
+    }
+  ]
+}

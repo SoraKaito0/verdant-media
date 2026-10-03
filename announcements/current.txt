@@ -1,0 +1,4 @@
+Welcome to Verdant!
+
+This announcement is loaded from GitHub Pages.
+Edit announcements/current.txt, commit and push, and every Verdant V11.1+ world using the same remote network can pick up the new message.
