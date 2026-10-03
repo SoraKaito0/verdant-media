@@ -1,9 +1,37 @@
 {
+  "schemaVersion": 12,
   "networkId": "VERDANT_PUBLIC",
-  "latestVersion": "11.1.0",
-  "message": "",
-  "maintenanceMode": false,
-  "adsEnabled": true,
-  "badgesEnabled": true,
-  "supportersEnabled": true
+  "displayName": "Verdant",
+  "latestVersion": "12.0.0",
+  "baseUrl": "https://sorakaito0.github.io/verdant-media/",
+  "features": {
+    "announcements": true,
+    "ads": true,
+    "badges": true,
+    "supporters": true,
+    "gallery": true,
+    "themes": true,
+    "youtube": true,
+    "radio": true,
+    "visualizer": true,
+    "teleports": true,
+    "utilities": true,
+    "staffPad": true
+  },
+  "paths": {
+    "announcements": "announcements/announcements.json",
+    "currentAnnouncement": "announcements/current.txt",
+    "ads": "ads/ads.json",
+    "badges": "badges/badges.json",
+    "supporters": "supporters/supporters.json",
+    "perks": "supporters/perks.json",
+    "gallery": "gallery/gallery.json",
+    "themes": "themes/themes.json",
+    "featuredMedia": "media/featured.json",
+    "radio": "media/radio.json",
+    "worlds": "config/worlds.json",
+    "modules": "config/modules.json",
+    "status": "updates/status.json",
+    "changelog": "updates/changelog.json"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "example-gallery",
+      "title": "Example Gallery Image",
+      "image": "gallery/photos/example-gallery.jpg",
+      "enabled": false,
+      "allowAsTabletBackground": true
+    }
+  ]
+}

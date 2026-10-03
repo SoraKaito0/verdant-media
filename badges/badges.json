@@ -1,93 +1,36 @@
 {
+  "schemaVersion": 1,
+  "maxEquipped": 3,
   "badges": [
-    {
-      "id": "verdant-creator",
-      "name": "Verdant Creator",
-      "type": "permanent",
-      "rarity": "legendary",
-      "description": "Creator / core developer recognition.",
-      "availability": "Creator assigned"
-    },
     {
       "id": "founder",
       "name": "Founder",
-      "type": "limited",
+      "type": "permanent",
       "rarity": "legendary",
-      "description": "Limited founding-period badge. Once awarded, keep the award entry to make it permanent.",
-      "availability": "Founding period only"
-    },
-    {
-      "id": "early-supporter",
-      "name": "Early Supporter",
-      "type": "limited",
-      "rarity": "rare",
-      "description": "For supporters who joined during the early Verdant period.",
-      "availability": "Limited"
+      "description": "Recognises an early founding supporter or contributor.",
+      "icon": "badges/icons/founder.png",
+      "enabled": true
     },
     {
       "id": "supporter",
       "name": "Supporter",
       "type": "status",
-      "rarity": "standard",
-      "description": "Active supporter recognition.",
-      "availability": "While eligible"
-    },
-    {
-      "id": "vip",
-      "name": "VIP",
-      "type": "status",
-      "rarity": "rare",
-      "description": "Active VIP supporter recognition.",
-      "availability": "While eligible"
-    },
-    {
-      "id": "patron",
-      "name": "Patron",
-      "type": "status",
-      "rarity": "epic",
-      "description": "Active Patron supporter recognition.",
-      "availability": "While eligible"
-    },
-    {
-      "id": "beta-tester",
-      "name": "Beta Tester",
-      "type": "permanent",
-      "rarity": "rare",
-      "description": "Helped test Verdant features before release.",
-      "availability": "Assigned by the Verdant team"
-    },
-    {
-      "id": "contributor",
-      "name": "Contributor",
-      "type": "permanent",
-      "rarity": "rare",
-      "description": "Contributed code, assets, testing, feedback or community work.",
-      "availability": "Assigned by the Verdant team"
-    },
-    {
-      "id": "event-host",
-      "name": "Event Host",
-      "type": "status",
-      "rarity": "standard",
-      "description": "Active event-host recognition.",
-      "availability": "While hosting"
+      "rarity": "common",
+      "description": "Active Verdant supporter.",
+      "icon": "badges/icons/supporter.png",
+      "enabled": true
     },
     {
       "id": "halloween-2026",
       "name": "Halloween 2026",
       "type": "limited",
-      "rarity": "limited",
-      "description": "Limited event badge for the 2026 Halloween period.",
-      "availability": "Halloween 2026"
-    }
-  ],
-  "awards": [
-    {
-      "player": "SoraKaito0",
-      "badges": [
-        "verdant-creator",
-        "founder"
-      ]
+      "rarity": "event",
+      "description": "Limited Verdant Halloween 2026 badge.",
+      "icon": "badges/icons/halloween-2026.png",
+      "availableFrom": "2026-10-24",
+      "availableUntil": "2026-11-02",
+      "keepAfterEarned": true,
+      "enabled": true
     }
   ]
 }

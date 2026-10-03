@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "note": "Display data only. Do not use this public file as secure staff authentication.",
+  "supporters": [
+    {
+      "displayName": "Example Supporter",
+      "tier": "supporter",
+      "enabled": false
+    }
+  ]
+}

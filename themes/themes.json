@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "themes": [
+    {
+      "id": "verdant",
+      "name": "Verdant",
+      "preview": "themes/previews/verdant.png",
+      "enabled": true
+    }
+  ]
+}

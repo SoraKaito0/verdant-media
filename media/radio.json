@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "stations": [
+    {
+      "id": "example-station",
+      "name": "Example Station",
+      "streamUrl": "",
+      "enabled": false
+    }
+  ]
+}

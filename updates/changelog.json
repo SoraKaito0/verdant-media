@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "latestVersion": "12.0.0",
+  "entries": [
+    {
+      "version": "12.0.0",
+      "title": "Universal Apps",
+      "notes": [
+        "Universal app architecture",
+        "Remote Verdant Network configuration",
+        "Supporter, badge, gallery and community content foundations"
+      ]
+    }
+  ]
+}

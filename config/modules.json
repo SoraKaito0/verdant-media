@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "modules": [
+    {
+      "id": "youtube",
+      "label": "YouTube / Watch",
+      "enabledByDefault": true
+    },
+    {
+      "id": "navigator",
+      "label": "World Navigator",
+      "enabledByDefault": true
+    },
+    {
+      "id": "timer",
+      "label": "Timer / Stopwatch",
+      "enabledByDefault": true
+    },
+    {
+      "id": "gallery",
+      "label": "Gallery",
+      "enabledByDefault": true
+    },
+    {
+      "id": "radio",
+      "label": "Radio / Shared Music",
+      "enabledByDefault": true
+    },
+    {
+      "id": "visualizer",
+      "label": "Music Visualizer",
+      "enabledByDefault": true
+    },
+    {
+      "id": "support",
+      "label": "Support",
+      "enabledByDefault": true
+    },
+    {
+      "id": "staff",
+      "label": "Staff Pad",
+      "enabledByDefault": true
+    },
+    {
+      "id": "announcements",
+      "label": "Announcements",
+      "enabledByDefault": true
+    },
+    {
+      "id": "ads",
+      "label": "Community Posters",
+      "enabledByDefault": true
+    }
+  ]
+}

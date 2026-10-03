@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "networkId": "VERDANT_PUBLIC",
+  "worlds": [
+    {
+      "id": "DEFAULT",
+      "displayName": "Verdant World",
+      "enabled": true,
+      "modules": {
+        "ads": true,
+        "announcements": true,
+        "badges": true,
+        "supporters": true,
+        "gallery": true,
+        "youtube": true
+      }
+    }
+  ]
+}

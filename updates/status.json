@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "network": "online",
+  "maintenance": false,
+  "message": "",
+  "services": {
+    "remoteConfig": "online",
+    "announcements": "online",
+    "supporters": "online",
+    "badges": "online",
+    "ads": "online"
+  }
+}

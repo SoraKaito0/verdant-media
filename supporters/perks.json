@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "tiers": [
+    {
+      "id": "supporter",
+      "name": "Supporter",
+      "suggestedPriceGBP": 3,
+      "perks": [
+        "Supporter badge",
+        "Name on Supporter Board",
+        "Supporter news and previews",
+        "Extra Verdant theme/accent"
+      ]
+    },
+    {
+      "id": "vip",
+      "name": "VIP",
+      "suggestedPriceGBP": 6,
+      "perks": [
+        "Everything in Supporter",
+        "Extra themes/backgrounds",
+        "VIP cosmetic/world access",
+        "Early feature access"
+      ]
+    },
+    {
+      "id": "patron",
+      "name": "Patron",
+      "suggestedPriceGBP": 10,
+      "perks": [
+        "Everything in VIP",
+        "Patron badge",
+        "Featured Supporter Board placement",
+        "Beta/test access",
+        "Verdant credits"
+      ]
+    },
+    {
+      "id": "founder",
+      "name": "Founder",
+      "manualOnly": true,
+      "perks": [
+        "Permanent Founder badge",
+        "Permanent credits recognition",
+        "Special Founder cosmetic theme"
+      ]
+    }
+  ]
+}

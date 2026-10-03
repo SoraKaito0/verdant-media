@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "currentId": "welcome-v12",
+  "items": [
+    {
+      "id": "welcome-v12",
+      "title": "Welcome to Verdant V12",
+      "body": "Verdant remote announcements are connected.",
+      "priority": "normal",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+VERDANT V12 URL QUICK REFERENCE
+
+Base:
+https://sorakaito0.github.io/verdant-media/
+
+Master config:
+https://sorakaito0.github.io/verdant-media/config/verdant.json
+
+World profiles:
+https://sorakaito0.github.io/verdant-media/config/worlds.json
+
+Announcements:
+https://sorakaito0.github.io/verdant-media/announcements/current.txt
+
+Ads:
+https://sorakaito0.github.io/verdant-media/ads/ads.json
+
+Badges:
+https://sorakaito0.github.io/verdant-media/badges/badges.json
+
+Supporters:
+https://sorakaito0.github.io/verdant-media/supporters/supporters.json
+
+Gallery:
+https://sorakaito0.github.io/verdant-media/gallery/gallery.json
+
+Themes:
+https://sorakaito0.github.io/verdant-media/themes/themes.json
+
+Status:
+https://sorakaito0.github.io/verdant-media/updates/status.json
