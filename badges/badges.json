@@ -1,36 +1,52 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "maxEquipped": 3,
   "badges": [
     {
-      "id": "founder",
-      "name": "Founder",
-      "type": "permanent",
-      "rarity": "legendary",
-      "description": "Recognises an early founding supporter or contributor.",
-      "icon": "badges/icons/founder.png",
-      "enabled": true
-    },
-    {
-      "id": "supporter",
-      "name": "Supporter",
+      "id": "patreon-tier-1-basic",
+      "name": "Tier 1 Basic",
       "type": "status",
       "rarity": "common",
-      "description": "Active Verdant supporter.",
-      "icon": "badges/icons/supporter.png",
-      "enabled": true
+      "description": "Active Tier 1 Basic Patreon supporter.",
+      "availability": "Active Patreon membership",
+      "icon": "badges/icons/tier-1-basic.png"
     },
     {
-      "id": "halloween-2026",
-      "name": "Halloween 2026",
-      "type": "limited",
-      "rarity": "event",
-      "description": "Limited Verdant Halloween 2026 badge.",
-      "icon": "badges/icons/halloween-2026.png",
-      "availableFrom": "2026-10-24",
-      "availableUntil": "2026-11-02",
-      "keepAfterEarned": true,
-      "enabled": true
+      "id": "patreon-tier-2-supporter",
+      "name": "Tier 2 Supporter",
+      "type": "status",
+      "rarity": "common",
+      "description": "Active Tier 2 Supporter Patreon member.",
+      "availability": "Active Patreon membership",
+      "icon": "badges/icons/tier-2-supporter.png"
+    },
+    {
+      "id": "patreon-tier-3-vip",
+      "name": "Tier 3 VIP",
+      "type": "status",
+      "rarity": "rare",
+      "description": "Active Tier 3 VIP Patreon member.",
+      "availability": "Active Patreon membership",
+      "icon": "badges/icons/tier-3-vip.png"
+    },
+    {
+      "id": "patreon-tier-4-elite",
+      "name": "Tier 4 Elite",
+      "type": "status",
+      "rarity": "epic",
+      "description": "Active Tier 4 Elite Patreon member with supporter identity customisation.",
+      "availability": "Active Patreon membership",
+      "icon": "badges/icons/tier-4-elite.png"
+    },
+    {
+      "id": "patreon-tier-5-guardian",
+      "name": "Tier 5 Guardian",
+      "type": "status",
+      "rarity": "legendary",
+      "description": "Active Tier 5 Guardian Patreon member with premium supporter identity customisation.",
+      "availability": "Active Patreon membership",
+      "icon": "badges/icons/tier-5-guardian.png"
     }
-  ]
+  ],
+  "awards": []
 }

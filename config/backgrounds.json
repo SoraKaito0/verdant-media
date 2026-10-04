@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "baseUrl": "https://sorakaito0.github.io/verdant-media/assets/backgrounds/",
+  "backgrounds": [
+    {
+      "id": "azulejo",
+      "name": "Azulejo",
+      "requiredTier": 0,
+      "path": "general/azulejo.png"
+    },
+    {
+      "id": "brick",
+      "name": "Brick",
+      "requiredTier": 0,
+      "path": "general/brick.png"
+    },
+    {
+      "id": "checkered",
+      "name": "Checkered",
+      "requiredTier": 0,
+      "path": "general/checkered.png"
+    },
+    {
+      "id": "retro-floral",
+      "name": "Retro Floral",
+      "requiredTier": 0,
+      "path": "general/retro-floral.png"
+    },
+    {
+      "id": "x",
+      "name": "X",
+      "requiredTier": 0,
+      "path": "general/x.png"
+    },
+    {
+      "id": "tier-2-scallop",
+      "name": "Scallop",
+      "requiredTier": 2,
+      "path": "tier-2-supporter/scallop.png"
+    },
+    {
+      "id": "tier-3-blue-camellias",
+      "name": "Blue Camellias",
+      "requiredTier": 3,
+      "path": "tier-3-vip/blue-camellias.png"
+    },
+    {
+      "id": "tier-4-water-lily",
+      "name": "Water Lily",
+      "requiredTier": 4,
+      "path": "tier-4-elite/water-lily.png"
+    },
+    {
+      "id": "tier-5-zellige",
+      "name": "Zellige",
+      "requiredTier": 5,
+      "path": "tier-5-guardian/zellige.png"
+    }
+  ]
+}

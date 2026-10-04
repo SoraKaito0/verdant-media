@@ -2,7 +2,7 @@
   "schemaVersion": 12,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "12.0.0",
+  "latestVersion": "12.2.0",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -16,14 +16,15 @@
     "visualizer": true,
     "teleports": true,
     "utilities": true,
-    "staffPad": true
+    "staffPad": true,
+    "patreonIdentity": true
   },
   "paths": {
     "announcements": "announcements/announcements.json",
     "currentAnnouncement": "announcements/current.txt",
     "ads": "ads/ads.json",
     "badges": "badges/badges.json",
-    "supporters": "supporters/supporters.json",
+    "supporters": "config/supporters.json",
     "perks": "supporters/perks.json",
     "gallery": "gallery/gallery.json",
     "themes": "themes/themes.json",
@@ -32,6 +33,7 @@
     "worlds": "config/worlds.json",
     "modules": "config/modules.json",
     "status": "updates/status.json",
-    "changelog": "updates/changelog.json"
+    "changelog": "updates/changelog.json",
+    "backgrounds": "config/backgrounds.json"
   }
 }

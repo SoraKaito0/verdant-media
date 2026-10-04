@@ -1,7 +1,28 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "12.0.0",
+  "latestVersion": "12.1.1",
   "entries": [
+    {
+      "version": "12.2.0",
+      "date": "2026-10-04",
+      "name": "Patreon Identity",
+      "changes": [
+        "Five Patreon ranks: Basic, Supporter, VIP, Elite, Guardian",
+        "Elite/Guardian persistent custom name colour",
+        "Elite/Guardian rank-specific join intros and optional short title",
+        "Patreon rank separated from staff authority",
+        "Tier badges and backgrounds organised for GitHub hosting"
+      ]
+    },
+    {
+      "version": "12.1.1",
+      "title": "Apps Isolation Hotfix",
+      "notes": [
+        "Removed Personal Locomotion from the Apps comfort page",
+        "Fixed app-tab overlap caused by the Comfort module reactivating its whole page",
+        "Added runtime app-panel isolation and reflowed the Comfort layout"
+      ]
+    },
     {
       "version": "12.0.0",
       "title": "Universal Apps",

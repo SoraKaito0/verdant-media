@@ -1,49 +1,78 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "tiers": [
     {
-      "id": "supporter",
-      "name": "Supporter",
-      "suggestedPriceGBP": 3,
+      "name": "Tier 1 Basic",
+      "key": "basic",
+      "price": "$3 / month",
       "perks": [
-        "Supporter badge",
         "Name on Supporter Board",
-        "Supporter news and previews",
-        "Extra Verdant theme/accent"
+        "Tier 1 player icon",
+        "Tier 1 badge",
+        "Access to supporter/VIP items"
       ]
     },
     {
-      "id": "vip",
-      "name": "VIP",
-      "suggestedPriceGBP": 6,
+      "name": "Tier 2 Supporter",
+      "key": "supporter",
+      "price": "$6 / month",
       "perks": [
-        "Everything in Supporter",
-        "Extra themes/backgrounds",
-        "VIP cosmetic/world access",
-        "Early feature access"
+        "Everything from Basic",
+        "Tier 2 player icon and badge",
+        "VIP Area access",
+        "Tier 2 exclusive background ×1"
       ]
     },
     {
-      "id": "patron",
-      "name": "Patron",
-      "suggestedPriceGBP": 10,
+      "name": "Tier 3 VIP",
+      "key": "vip",
+      "price": "$10 / month",
       "perks": [
-        "Everything in VIP",
-        "Patron badge",
-        "Featured Supporter Board placement",
-        "Beta/test access",
-        "Verdant credits"
+        "Everything from Supporter",
+        "Tier 3 player icon and badge",
+        "Tier 3 exclusive background ×1",
+        "All previous tier backgrounds"
       ]
     },
     {
-      "id": "founder",
-      "name": "Founder",
-      "manualOnly": true,
+      "name": "Tier 4 Elite",
+      "key": "elite",
+      "price": "$20 / month",
       "perks": [
-        "Permanent Founder badge",
-        "Permanent credits recognition",
-        "Special Founder cosmetic theme"
+        "Everything from VIP",
+        "Tier 4 player icon and badge",
+        "Tier 4 exclusive background ×1",
+        "Elite default name colour",
+        "Persistent custom name colour",
+        "Elite join intro",
+        "Optional short join title"
+      ]
+    },
+    {
+      "name": "Tier 5 Guardian",
+      "key": "guardian",
+      "price": "$30 / month",
+      "perks": [
+        "Everything from Elite",
+        "Tier 5 player icon and badge",
+        "Tier 5 exclusive background ×1",
+        "Guardian default name colour",
+        "Persistent custom name colour",
+        "Guardian join intro",
+        "Optional short join title"
       ]
     }
-  ]
+  ],
+  "identity": {
+    "elite": {
+      "defaultColour": "#F2BA4A",
+      "customColour": true,
+      "joinIntro": "★ ELITE • {name} — {title} has joined the world"
+    },
+    "guardian": {
+      "defaultColour": "#4FEFC0",
+      "customColour": true,
+      "joinIntro": "◆ GUARDIAN • {name} — {title} has entered Verdant"
+    }
+  }
 }
