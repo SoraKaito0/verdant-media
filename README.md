@@ -53,3 +53,7 @@ What changed:
 
 Important:
 Everything here is public. Never store passwords, tokens, private keys, or secure staff credentials in this repo.
+
+## V12.3 remote backgrounds
+
+Verdant V12.3 reads `config/backgrounds.json` directly. Remote background cards start with a template/black preview and replace it with the configured GitHub thumbnail when loaded. Free and Patreon-tier backgrounds can live together in the same manifest, and new backgrounds can be added without rebuilding the Unity UI.

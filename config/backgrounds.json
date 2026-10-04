@@ -6,55 +6,64 @@
       "id": "azulejo",
       "name": "Azulejo",
       "requiredTier": 0,
-      "path": "general/azulejo.png"
+      "path": "general/azulejo.png",
+      "thumbnailPath": "thumbnails/azulejo.jpg"
     },
     {
       "id": "brick",
       "name": "Brick",
       "requiredTier": 0,
-      "path": "general/brick.png"
+      "path": "general/brick.png",
+      "thumbnailPath": "thumbnails/brick.jpg"
     },
     {
       "id": "checkered",
       "name": "Checkered",
       "requiredTier": 0,
-      "path": "general/checkered.png"
+      "path": "general/checkered.png",
+      "thumbnailPath": "thumbnails/checkered.jpg"
     },
     {
       "id": "retro-floral",
       "name": "Retro Floral",
       "requiredTier": 0,
-      "path": "general/retro-floral.png"
+      "path": "general/retro-floral.png",
+      "thumbnailPath": "thumbnails/retro-floral.jpg"
     },
     {
       "id": "x",
       "name": "X",
       "requiredTier": 0,
-      "path": "general/x.png"
+      "path": "general/x.png",
+      "thumbnailPath": "thumbnails/x.jpg"
     },
     {
       "id": "tier-2-scallop",
       "name": "Scallop",
       "requiredTier": 2,
-      "path": "tier-2-supporter/scallop.png"
+      "path": "tier-2-supporter/scallop.png",
+      "thumbnailPath": "thumbnails/tier-2-scallop.jpg"
     },
     {
       "id": "tier-3-blue-camellias",
       "name": "Blue Camellias",
       "requiredTier": 3,
-      "path": "tier-3-vip/blue-camellias.png"
+      "path": "tier-3-vip/blue-camellias.png",
+      "thumbnailPath": "thumbnails/tier-3-blue-camellias.jpg"
     },
     {
       "id": "tier-4-water-lily",
       "name": "Water Lily",
       "requiredTier": 4,
-      "path": "tier-4-elite/water-lily.png"
+      "path": "tier-4-elite/water-lily.png",
+      "thumbnailPath": "thumbnails/tier-4-water-lily.jpg"
     },
     {
       "id": "tier-5-zellige",
       "name": "Zellige",
       "requiredTier": 5,
-      "path": "tier-5-guardian/zellige.png"
+      "path": "tier-5-guardian/zellige.png",
+      "thumbnailPath": "thumbnails/tier-5-zellige.jpg"
     }
   ]
 }

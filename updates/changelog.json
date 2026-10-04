@@ -1,7 +1,21 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "12.1.1",
+  "latestVersion": "12.3.0",
   "entries": [
+    {
+      "version": "12.3.0",
+      "date": "2026-10-04",
+      "name": "Guardian Moderation",
+      "changes": [
+        "Staff Pad overhaul with cleaner player selection and grouped moderation controls",
+        "World-local Warn, Force Mute, Travel Lock, Pickup Lock and TP-to-Spawn actions",
+        "Owner-only supporter self-preview and complimentary courtesy roles",
+        "Reusable supporter portals with local fade transitions and tier gates",
+        "GitHub background manifest compatibility fix for baseUrl/path/requiredTier",
+        "Remote background thumbnail cards replace the black template automatically when loaded",
+        "Existing manually positioned Verdant cats are preserved during rebuilds"
+      ]
+    },
     {
       "version": "12.2.0",
       "date": "2026-10-04",

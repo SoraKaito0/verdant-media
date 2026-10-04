@@ -2,7 +2,7 @@
   "schemaVersion": 12,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "12.2.0",
+  "latestVersion": "12.3.0",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -17,7 +17,10 @@
     "teleports": true,
     "utilities": true,
     "staffPad": true,
-    "patreonIdentity": true
+    "patreonIdentity": true,
+    "remoteBackgrounds": true,
+    "worldModeration": true,
+    "supporterPortals": true
   },
   "paths": {
     "announcements": "announcements/announcements.json",
