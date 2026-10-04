@@ -6,74 +6,84 @@
       "id": "azulejo",
       "name": "Azulejo",
       "requiredTier": 0,
-      "path": "general/azulejo.png",
+      "path": "thumbnails/azulejo.jpg",
       "thumbnailPath": "thumbnails/azulejo.jpg",
-      "slot": 0
+      "slot": 0,
+      "sourcePath": "general/azulejo.png"
     },
     {
       "id": "brick",
       "name": "Brick",
       "requiredTier": 0,
-      "path": "general/brick.png",
+      "path": "thumbnails/brick.jpg",
       "thumbnailPath": "thumbnails/brick.jpg",
-      "slot": 1
+      "slot": 1,
+      "sourcePath": "general/brick.png"
     },
     {
       "id": "checkered",
       "name": "Checkered",
       "requiredTier": 0,
-      "path": "general/checkered.png",
+      "path": "thumbnails/checkered.jpg",
       "thumbnailPath": "thumbnails/checkered.jpg",
-      "slot": 2
+      "slot": 2,
+      "sourcePath": "general/checkered.png"
     },
     {
       "id": "retro-floral",
       "name": "Retro Floral",
       "requiredTier": 0,
-      "path": "general/retro-floral.png",
+      "path": "thumbnails/retro-floral.jpg",
       "thumbnailPath": "thumbnails/retro-floral.jpg",
-      "slot": 3
+      "slot": 3,
+      "sourcePath": "general/retro-floral.png"
     },
     {
       "id": "x",
       "name": "X",
       "requiredTier": 0,
-      "path": "general/x.png",
+      "path": "thumbnails/x.jpg",
       "thumbnailPath": "thumbnails/x.jpg",
-      "slot": 4
+      "slot": 4,
+      "sourcePath": "general/x.png"
     },
     {
       "id": "tier-2-scallop",
       "name": "Scallop",
       "requiredTier": 2,
-      "path": "tier-2-supporter/scallop.png",
+      "path": "thumbnails/tier-2-scallop.jpg",
       "thumbnailPath": "thumbnails/tier-2-scallop.jpg",
-      "slot": 5
+      "slot": 5,
+      "sourcePath": "tier-2-supporter/scallop.png"
     },
     {
       "id": "tier-3-blue-camellias",
       "name": "Blue Camellias",
       "requiredTier": 3,
-      "path": "tier-3-vip/blue-camellias.png",
+      "path": "thumbnails/tier-3-blue-camellias.jpg",
       "thumbnailPath": "thumbnails/tier-3-blue-camellias.jpg",
-      "slot": 6
+      "slot": 6,
+      "sourcePath": "tier-3-vip/blue-camellias.png"
     },
     {
       "id": "tier-4-water-lily",
       "name": "Water Lily",
       "requiredTier": 4,
-      "path": "tier-4-elite/water-lily.png",
+      "path": "thumbnails/tier-4-water-lily.jpg",
       "thumbnailPath": "thumbnails/tier-4-water-lily.jpg",
-      "slot": 7
+      "slot": 7,
+      "sourcePath": "tier-4-elite/water-lily.png"
     },
     {
       "id": "tier-5-zellige",
       "name": "Zellige",
       "requiredTier": 5,
-      "path": "tier-5-guardian/zellige.png",
+      "path": "thumbnails/tier-5-zellige.jpg",
       "thumbnailPath": "thumbnails/tier-5-zellige.jpg",
-      "slot": 8
+      "slot": 8,
+      "sourcePath": "tier-5-guardian/zellige.png"
     }
   ],
-  "slotCapacity": 40
+  "slotCapacity": 40,
+  "runtimeNote": "VRChat loads the <=2048px thumbnail path as the runtime repeating texture; sourcePath keeps the original full-resolution artwork."
 }
