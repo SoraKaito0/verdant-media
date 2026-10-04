@@ -2,7 +2,7 @@
   "schemaVersion": 12,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "12.3.0",
+  "latestVersion": "12.3.3",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -38,5 +38,6 @@
     "status": "updates/status.json",
     "changelog": "updates/changelog.json",
     "backgrounds": "config/backgrounds.json"
-  }
+  },
+  "message": "Background and badge reliability hotfix available."
 }
