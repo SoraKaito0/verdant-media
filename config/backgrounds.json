@@ -6,72 +6,72 @@
       "id": "azulejo",
       "name": "Azulejo",
       "requiredTier": 0,
-      "path": "slots/slot-00.png",
-      "thumbnailPath": "slots/previews/slot-00.jpg",
+      "path": "general/azulejo.png",
+      "thumbnailPath": "thumbnails/azulejo.jpg",
       "slot": 0
     },
     {
       "id": "brick",
       "name": "Brick",
       "requiredTier": 0,
-      "path": "slots/slot-01.png",
-      "thumbnailPath": "slots/previews/slot-01.jpg",
+      "path": "general/brick.png",
+      "thumbnailPath": "thumbnails/brick.jpg",
       "slot": 1
     },
     {
       "id": "checkered",
       "name": "Checkered",
       "requiredTier": 0,
-      "path": "slots/slot-02.png",
-      "thumbnailPath": "slots/previews/slot-02.jpg",
+      "path": "general/checkered.png",
+      "thumbnailPath": "thumbnails/checkered.jpg",
       "slot": 2
     },
     {
       "id": "retro-floral",
       "name": "Retro Floral",
       "requiredTier": 0,
-      "path": "slots/slot-03.png",
-      "thumbnailPath": "slots/previews/slot-03.jpg",
+      "path": "general/retro-floral.png",
+      "thumbnailPath": "thumbnails/retro-floral.jpg",
       "slot": 3
     },
     {
       "id": "x",
       "name": "X",
       "requiredTier": 0,
-      "path": "slots/slot-04.png",
-      "thumbnailPath": "slots/previews/slot-04.jpg",
+      "path": "general/x.png",
+      "thumbnailPath": "thumbnails/x.jpg",
       "slot": 4
     },
     {
       "id": "tier-2-scallop",
       "name": "Scallop",
       "requiredTier": 2,
-      "path": "slots/slot-05.png",
-      "thumbnailPath": "slots/previews/slot-05.jpg",
+      "path": "tier-2-supporter/scallop.png",
+      "thumbnailPath": "thumbnails/tier-2-scallop.jpg",
       "slot": 5
     },
     {
       "id": "tier-3-blue-camellias",
       "name": "Blue Camellias",
       "requiredTier": 3,
-      "path": "slots/slot-06.png",
-      "thumbnailPath": "slots/previews/slot-06.jpg",
+      "path": "tier-3-vip/blue-camellias.png",
+      "thumbnailPath": "thumbnails/tier-3-blue-camellias.jpg",
       "slot": 6
     },
     {
       "id": "tier-4-water-lily",
       "name": "Water Lily",
       "requiredTier": 4,
-      "path": "slots/slot-07.png",
-      "thumbnailPath": "slots/previews/slot-07.jpg",
+      "path": "tier-4-elite/water-lily.png",
+      "thumbnailPath": "thumbnails/tier-4-water-lily.jpg",
       "slot": 7
     },
     {
       "id": "tier-5-zellige",
       "name": "Zellige",
       "requiredTier": 5,
-      "path": "slots/slot-08.png",
-      "thumbnailPath": "slots/previews/slot-08.jpg",
+      "path": "tier-5-guardian/zellige.png",
+      "thumbnailPath": "thumbnails/tier-5-zellige.jpg",
       "slot": 8
     }
   ],
