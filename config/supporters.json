@@ -69,14 +69,7 @@
       ]
     }
   ],
-  "supporters": [
-    {
-      "name": "【ร๏гคкคเՇ๏0】",
-      "tier": "guardian",
-      "colour": "",
-      "joinTitle": ""
-    }
-  ],
+  "supporters": [],
   "entryTemplate": {
     "name": "VRChat Display Name",
     "tier": "elite",
