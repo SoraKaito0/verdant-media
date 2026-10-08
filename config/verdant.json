@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 13,
+  "schemaVersion": 14,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "13.0.0",
+  "latestVersion": "13.1.0",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -18,7 +18,7 @@
     "utilities": true,
     "staffPad": true,
     "patreonIdentity": true,
-    "remoteBackgrounds": true,
+    "remoteBackgrounds": false,
     "remoteStaff": true,
     "unifiedMedia": true,
     "supporterItems": true,
@@ -40,8 +40,7 @@
     "worlds": "config/worlds.json",
     "modules": "config/modules.json",
     "status": "updates/status.json",
-    "changelog": "updates/changelog.json",
-    "backgrounds": "config/backgrounds.json"
+    "changelog": "updates/changelog.json"
   },
-  "message": "Verdant V13 unified system update available."
+  "message": "Verdant V13.1 local background library and supporter polish available."
 }

@@ -1,7 +1,22 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.0.0",
+  "latestVersion": "13.1.0",
   "entries": [
+    {
+      "version": "13.1.0",
+      "date": "2026-10-08",
+      "name": "Local Library & Supporter Polish",
+      "changes": [
+        "Remote wallpaper catalogue retired; former hosted backgrounds are bundled locally for reliable instant previews",
+        "Removed user-facing GitHub and Free labels from background selection",
+        "Tablet background picker now uses preview cards and readable names matching the Main Board",
+        "Quick Notes now stays clipped inside its panel with vertical scrolling",
+        "Gallery can follow the active VRChat handheld Photo Camera when available, with hand and eye fallbacks",
+        "Supporter Benefits is masked, scrollable and spaced more cleanly",
+        "Patreon and Discord link cards added with local icons and QR/link popups",
+        "Supporters can display their tier badge above their avatar and opt out from the Benefits page"
+      ]
+    },
     {
       "version": "13.0.0",
       "date": "2026-10-08",
