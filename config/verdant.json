@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 12,
+  "schemaVersion": 13,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "12.3.3",
+  "latestVersion": "13.0.0",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -19,6 +19,9 @@
     "staffPad": true,
     "patreonIdentity": true,
     "remoteBackgrounds": true,
+    "remoteStaff": true,
+    "unifiedMedia": true,
+    "supporterItems": true,
     "worldModeration": true,
     "supporterPortals": true
   },
@@ -28,6 +31,7 @@
     "ads": "ads/ads.json",
     "badges": "badges/badges.json",
     "supporters": "config/supporters.json",
+    "staff": "config/staff.json",
     "perks": "supporters/perks.json",
     "gallery": "gallery/gallery.json",
     "themes": "themes/themes.json",
@@ -39,5 +43,5 @@
     "changelog": "updates/changelog.json",
     "backgrounds": "config/backgrounds.json"
   },
-  "message": "Background and badge reliability hotfix available."
+  "message": "Verdant V13 unified system update available."
 }
