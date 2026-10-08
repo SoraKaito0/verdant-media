@@ -2,7 +2,7 @@
   "schemaVersion": 14,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "13.2.4",
+  "latestVersion": "13.2.5",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -42,5 +42,5 @@
     "status": "updates/status.json",
     "changelog": "updates/changelog.json"
   },
-  "message": "Verdant V13.2.4 supporter link prefill and main-board stats cleanup hotfix available."
+  "message": "Verdant V13.2.5 static community links and stable supporter tier layout available."
 }
