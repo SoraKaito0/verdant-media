@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.1",
+  "latestVersion": "13.2.2",
   "entries": [
+    {
+      "version": "13.2.2",
+      "date": "2026-10-08",
+      "name": "Ping + YouTube Thumbnail Hotfix",
+      "changes": [
+        "Replaced the local SimulationTime-based ping estimate that commonly sat around the replication buffer value",
+        "Local and self-reported player telemetry now use the SDK network round-trip statistic",
+        "Disabled Rinvo YouTube result darkening overlay that was making thumbnails almost black",
+        "Kept thumbnail masking while hiding the mask graphic so loaded cover images retain normal brightness"
+      ]
+    },
     {
       "version": "13.2.1",
       "date": "2026-10-08",
