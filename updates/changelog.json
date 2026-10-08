@@ -1,7 +1,22 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "12.3.0",
+  "latestVersion": "13.0.0",
   "entries": [
+    {
+      "version": "13.0.0",
+      "date": "2026-10-08",
+      "name": "Unified System",
+      "changes": [
+        "Supporter Board redesigned around Guardian, Elite, VIP, Supporter and Basic recognition sections with live counts",
+        "Personal Tablet, Main Board and Shared Video Player retain their familiar layouts while sharing the same media and state architecture",
+        "Staff Pad player-management actions expanded with Freeze, Send to Spawn, Media Lock and safer world-local restriction state",
+        "Permanent Unity staff roles plus optional remote Manager, Admin and Moderator assignments from config/staff.json",
+        "Supporter item registry added for rank-gated world items, doors, pickups and interactions",
+        "Remote background labels cleaned so technical GitHub/file wording never appears to visitors",
+        "Local media volume persistence and clearer Ready, Loading, Playing, Paused and Error states",
+        "Verdant cats preserve their existing manually positioned scene transforms during rebuilds"
+      ]
+    },
     {
       "version": "12.3.0",
       "date": "2026-10-04",
