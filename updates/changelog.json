@@ -1,7 +1,16 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.1.0",
+  "latestVersion": "13.1.1",
   "entries": [
+    {
+      "version": "13.1.1",
+      "date": "2026-10-08",
+      "name": "TMP Compile Hotfix",
+      "changes": [
+        "Replaced unsupported TextAlignmentOptions.MidlineCenter values with TextAlignmentOptions.Center",
+        "Restores Unity editor compilation so the V13.1 rebuild menu can load"
+      ]
+    },
     {
       "version": "13.1.0",
       "date": "2026-10-08",
