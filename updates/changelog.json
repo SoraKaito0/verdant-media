@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.3",
+  "latestVersion": "13.2.4",
   "entries": [
+    {
+      "version": "13.2.4",
+      "date": "2026-10-08",
+      "name": "Link Prefill + Stats Cleanup",
+      "changes": [
+        "Patreon and Discord native VRChat URL dialogs are now prefilled through the actual legacy VRCUrlInputField text value",
+        "Removes the media-field placeholder behaviour from supporter link launchers",
+        "Cleans up stacked V10/V11/V12/V13 local-performance cards before rebuilding the main-board FPS/PING display",
+        "Prevents faint duplicate text from appearing behind the main-board FPS and ping readout"
+      ]
+    },
     {
       "version": "13.2.3",
       "date": "2026-10-08",
