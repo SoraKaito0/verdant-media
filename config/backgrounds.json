@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "baseUrl": "https://sorakaito0.github.io/verdant-media/assets/backgrounds/",
   "backgrounds": [
     {
@@ -9,7 +9,9 @@
       "path": "thumbnails/azulejo.jpg",
       "thumbnailPath": "thumbnails/azulejo.jpg",
       "slot": 0,
-      "sourcePath": "general/azulejo.png"
+      "sourcePath": "general/azulejo.png",
+      "displayName": "Azulejo",
+      "category": "Free"
     },
     {
       "id": "brick",
@@ -18,7 +20,9 @@
       "path": "thumbnails/brick.jpg",
       "thumbnailPath": "thumbnails/brick.jpg",
       "slot": 1,
-      "sourcePath": "general/brick.png"
+      "sourcePath": "general/brick.png",
+      "displayName": "Brick",
+      "category": "Free"
     },
     {
       "id": "checkered",
@@ -27,7 +31,9 @@
       "path": "thumbnails/checkered.jpg",
       "thumbnailPath": "thumbnails/checkered.jpg",
       "slot": 2,
-      "sourcePath": "general/checkered.png"
+      "sourcePath": "general/checkered.png",
+      "displayName": "Checkered",
+      "category": "Free"
     },
     {
       "id": "retro-floral",
@@ -36,7 +42,9 @@
       "path": "thumbnails/retro-floral.jpg",
       "thumbnailPath": "thumbnails/retro-floral.jpg",
       "slot": 3,
-      "sourcePath": "general/retro-floral.png"
+      "sourcePath": "general/retro-floral.png",
+      "displayName": "Retro Floral",
+      "category": "Free"
     },
     {
       "id": "x",
@@ -45,7 +53,9 @@
       "path": "thumbnails/x.jpg",
       "thumbnailPath": "thumbnails/x.jpg",
       "slot": 4,
-      "sourcePath": "general/x.png"
+      "sourcePath": "general/x.png",
+      "displayName": "X",
+      "category": "Free"
     },
     {
       "id": "tier-2-scallop",
@@ -54,7 +64,9 @@
       "path": "thumbnails/tier-2-scallop.jpg",
       "thumbnailPath": "thumbnails/tier-2-scallop.jpg",
       "slot": 5,
-      "sourcePath": "tier-2-supporter/scallop.png"
+      "sourcePath": "tier-2-supporter/scallop.png",
+      "displayName": "Scallop",
+      "category": "Supporter"
     },
     {
       "id": "tier-3-blue-camellias",
@@ -63,7 +75,9 @@
       "path": "thumbnails/tier-3-blue-camellias.jpg",
       "thumbnailPath": "thumbnails/tier-3-blue-camellias.jpg",
       "slot": 6,
-      "sourcePath": "tier-3-vip/blue-camellias.png"
+      "sourcePath": "tier-3-vip/blue-camellias.png",
+      "displayName": "Blue Camellias",
+      "category": "VIP"
     },
     {
       "id": "tier-4-water-lily",
@@ -72,7 +86,9 @@
       "path": "thumbnails/tier-4-water-lily.jpg",
       "thumbnailPath": "thumbnails/tier-4-water-lily.jpg",
       "slot": 7,
-      "sourcePath": "tier-4-elite/water-lily.png"
+      "sourcePath": "tier-4-elite/water-lily.png",
+      "displayName": "Water Lily",
+      "category": "Elite"
     },
     {
       "id": "tier-5-zellige",
@@ -81,9 +97,11 @@
       "path": "thumbnails/tier-5-zellige.jpg",
       "thumbnailPath": "thumbnails/tier-5-zellige.jpg",
       "slot": 8,
-      "sourcePath": "tier-5-guardian/zellige.png"
+      "sourcePath": "tier-5-guardian/zellige.png",
+      "displayName": "Zellige",
+      "category": "Guardian"
     }
   ],
   "slotCapacity": 40,
-  "runtimeNote": "VRChat loads the <=2048px thumbnail path as the runtime repeating texture; sourcePath keeps the original full-resolution artwork."
+  "runtimeNote": "Verdant V13 uses clean displayName labels and VRChat-safe predeclared image slots. Runtime previews keep the local black template until a valid remote image loads."
 }
