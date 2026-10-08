@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.2",
+  "latestVersion": "13.2.3",
   "entries": [
+    {
+      "version": "13.2.3",
+      "date": "2026-10-08",
+      "name": "Native Links + Camera Layout Hotfix",
+      "changes": [
+        "Moved the Gallery camera-mode control above the live preview and reduced its footprint so it no longer covers the image",
+        "Shortened camera-mode labels for the compact control",
+        "Patreon and Discord launcher cards now force VRChat's native URL/text input modal behaviour",
+        "Pre-fills the Patreon or Discord destination inside the native VRChat input box",
+        "Removes third-party keyboard overrides from supporter link fields that could suppress the native input modal"
+      ]
+    },
     {
       "version": "13.2.2",
       "date": "2026-10-08",
