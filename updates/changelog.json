@@ -1,7 +1,24 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.1.1",
+  "latestVersion": "13.2.0",
   "entries": [
+    {
+      "version": "13.2.0",
+      "date": "2026-10-08",
+      "name": "Supporter + Background Polish",
+      "changes": [
+        "Support Tiers is now the single supporter landing page; redundant Supporters navigation removed",
+        "Basic tier restored and all five supporter tiers remain available in the recognition wall",
+        "Benefits rebuilt as five clean scrollable tier cards with top-to-bottom navigation and masking",
+        "Badge page simplified so benefit descriptions are no longer repeated beneath badge artwork",
+        "Supporter Guide points users to the Verdant Discord first for setup, linking and help",
+        "Patreon and Discord QR codes removed in favour of clean link popups with selectable addresses",
+        "Main Board and Tablet background pickers now share one large-preview card layout",
+        "Background names are cleaned of GitHub, Remote, Free, file-extension and Tier suffix wording",
+        "Backgrounds sort free first, then Basic, Supporter, VIP, Elite and Guardian",
+        "Separate More Backgrounds section and the old backgrounds-page Patreon pin removed"
+      ]
+    },
     {
       "version": "13.1.1",
       "date": "2026-10-08",
