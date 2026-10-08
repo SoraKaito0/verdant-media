@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.4",
+  "latestVersion": "13.2.5",
   "entries": [
+    {
+      "version": "13.2.5",
+      "date": "2026-10-08",
+      "name": "Static Links + Stable Tier Layout",
+      "changes": [
+        "Removed Patreon and Discord URL-input launchers and replaced them with plain readable text addresses",
+        "Supporter Guide now shows the same static Discord and Patreon addresses",
+        "Supporter tier wall starts at its final compact one-row height instead of shrinking after supporter data loads",
+        "Main Board player supporter badges use a fixed square size so they no longer resize when the tier sprite appears"
+      ]
+    },
     {
       "version": "13.2.4",
       "date": "2026-10-08",
