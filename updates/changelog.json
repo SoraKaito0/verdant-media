@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.0",
+  "latestVersion": "13.2.1",
   "entries": [
+    {
+      "version": "13.2.1",
+      "date": "2026-10-08",
+      "name": "Tier Wall + URL Field Hotfix",
+      "changes": [
+        "Compact empty supporter tier sections so Basic is no longer clipped at the bottom",
+        "Added a persistent scrollbar to the supporter recognition wall",
+        "Patreon and Discord cards now use pre-filled VRCUrlInputField controls instead of the oversized media-style popup",
+        "Guide Patreon/Discord links use the same native VRChat URL input interaction"
+      ]
+    },
     {
       "version": "13.2.0",
       "date": "2026-10-08",
