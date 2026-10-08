@@ -2,7 +2,7 @@
   "schemaVersion": 14,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "13.2.1",
+  "latestVersion": "13.2.2",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -42,5 +42,5 @@
     "status": "updates/status.json",
     "changelog": "updates/changelog.json"
   },
-  "message": "Verdant V13.2.1 supporter tier wall and native URL-field hotfix available."
+  "message": "Verdant V13.2.2 ping and YouTube thumbnail hotfix available."
 }
