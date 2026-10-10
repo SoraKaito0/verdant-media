@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "ownerPolicy": "local-only",
+  "note": "Owner remains configured in Unity by default. Remote staff assignments are intended for Manager, Admin and Moderator roles.",
+  "staff": {
+    "owners": [],
+    "managers": [],
+    "admins": [],
+    "moderators": []
+  }
+}

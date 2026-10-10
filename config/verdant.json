@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 12,
+  "schemaVersion": 14,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "12.3.0",
+  "latestVersion": "13.2.5",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -18,7 +18,10 @@
     "utilities": true,
     "staffPad": true,
     "patreonIdentity": true,
-    "remoteBackgrounds": true,
+    "remoteBackgrounds": false,
+    "remoteStaff": true,
+    "unifiedMedia": true,
+    "supporterItems": true,
     "worldModeration": true,
     "supporterPortals": true
   },
@@ -28,6 +31,7 @@
     "ads": "ads/ads.json",
     "badges": "badges/badges.json",
     "supporters": "config/supporters.json",
+    "staff": "config/staff.json",
     "perks": "supporters/perks.json",
     "gallery": "gallery/gallery.json",
     "themes": "themes/themes.json",
@@ -36,7 +40,7 @@
     "worlds": "config/worlds.json",
     "modules": "config/modules.json",
     "status": "updates/status.json",
-    "changelog": "updates/changelog.json",
-    "backgrounds": "config/backgrounds.json"
-  }
+    "changelog": "updates/changelog.json"
+  },
+  "message": "Verdant V13.2.5 static community links and stable supporter tier layout available."
 }

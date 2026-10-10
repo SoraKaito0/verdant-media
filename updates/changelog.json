@@ -1,7 +1,119 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "12.3.0",
+  "latestVersion": "13.2.5",
   "entries": [
+    {
+      "version": "13.2.5",
+      "date": "2026-10-08",
+      "name": "Static Links + Stable Tier Layout",
+      "changes": [
+        "Removed Patreon and Discord URL-input launchers and replaced them with plain readable text addresses",
+        "Supporter Guide now shows the same static Discord and Patreon addresses",
+        "Supporter tier wall starts at its final compact one-row height instead of shrinking after supporter data loads",
+        "Main Board player supporter badges use a fixed square size so they no longer resize when the tier sprite appears"
+      ]
+    },
+    {
+      "version": "13.2.4",
+      "date": "2026-10-08",
+      "name": "Link Prefill + Stats Cleanup",
+      "changes": [
+        "Patreon and Discord native VRChat URL dialogs are now prefilled through the actual legacy VRCUrlInputField text value",
+        "Removes the media-field placeholder behaviour from supporter link launchers",
+        "Cleans up stacked V10/V11/V12/V13 local-performance cards before rebuilding the main-board FPS/PING display",
+        "Prevents faint duplicate text from appearing behind the main-board FPS and ping readout"
+      ]
+    },
+    {
+      "version": "13.2.3",
+      "date": "2026-10-08",
+      "name": "Native Links + Camera Layout Hotfix",
+      "changes": [
+        "Moved the Gallery camera-mode control above the live preview and reduced its footprint so it no longer covers the image",
+        "Shortened camera-mode labels for the compact control",
+        "Patreon and Discord launcher cards now force VRChat's native URL/text input modal behaviour",
+        "Pre-fills the Patreon or Discord destination inside the native VRChat input box",
+        "Removes third-party keyboard overrides from supporter link fields that could suppress the native input modal"
+      ]
+    },
+    {
+      "version": "13.2.2",
+      "date": "2026-10-08",
+      "name": "Ping + YouTube Thumbnail Hotfix",
+      "changes": [
+        "Replaced the local SimulationTime-based ping estimate that commonly sat around the replication buffer value",
+        "Local and self-reported player telemetry now use the SDK network round-trip statistic",
+        "Disabled Rinvo YouTube result darkening overlay that was making thumbnails almost black",
+        "Kept thumbnail masking while hiding the mask graphic so loaded cover images retain normal brightness"
+      ]
+    },
+    {
+      "version": "13.2.1",
+      "date": "2026-10-08",
+      "name": "Tier Wall + URL Field Hotfix",
+      "changes": [
+        "Compact empty supporter tier sections so Basic is no longer clipped at the bottom",
+        "Added a persistent scrollbar to the supporter recognition wall",
+        "Patreon and Discord cards now use pre-filled VRCUrlInputField controls instead of the oversized media-style popup",
+        "Guide Patreon/Discord links use the same native VRChat URL input interaction"
+      ]
+    },
+    {
+      "version": "13.2.0",
+      "date": "2026-10-08",
+      "name": "Supporter + Background Polish",
+      "changes": [
+        "Support Tiers is now the single supporter landing page; redundant Supporters navigation removed",
+        "Basic tier restored and all five supporter tiers remain available in the recognition wall",
+        "Benefits rebuilt as five clean scrollable tier cards with top-to-bottom navigation and masking",
+        "Badge page simplified so benefit descriptions are no longer repeated beneath badge artwork",
+        "Supporter Guide points users to the Verdant Discord first for setup, linking and help",
+        "Patreon and Discord QR codes removed in favour of clean link popups with selectable addresses",
+        "Main Board and Tablet background pickers now share one large-preview card layout",
+        "Background names are cleaned of GitHub, Remote, Free, file-extension and Tier suffix wording",
+        "Backgrounds sort free first, then Basic, Supporter, VIP, Elite and Guardian",
+        "Separate More Backgrounds section and the old backgrounds-page Patreon pin removed"
+      ]
+    },
+    {
+      "version": "13.1.1",
+      "date": "2026-10-08",
+      "name": "TMP Compile Hotfix",
+      "changes": [
+        "Replaced unsupported TextAlignmentOptions.MidlineCenter values with TextAlignmentOptions.Center",
+        "Restores Unity editor compilation so the V13.1 rebuild menu can load"
+      ]
+    },
+    {
+      "version": "13.1.0",
+      "date": "2026-10-08",
+      "name": "Local Library & Supporter Polish",
+      "changes": [
+        "Remote wallpaper catalogue retired; former hosted backgrounds are bundled locally for reliable instant previews",
+        "Removed user-facing GitHub and Free labels from background selection",
+        "Tablet background picker now uses preview cards and readable names matching the Main Board",
+        "Quick Notes now stays clipped inside its panel with vertical scrolling",
+        "Gallery can follow the active VRChat handheld Photo Camera when available, with hand and eye fallbacks",
+        "Supporter Benefits is masked, scrollable and spaced more cleanly",
+        "Patreon and Discord link cards added with local icons and QR/link popups",
+        "Supporters can display their tier badge above their avatar and opt out from the Benefits page"
+      ]
+    },
+    {
+      "version": "13.0.0",
+      "date": "2026-10-08",
+      "name": "Unified System",
+      "changes": [
+        "Supporter Board redesigned around Guardian, Elite, VIP, Supporter and Basic recognition sections with live counts",
+        "Personal Tablet, Main Board and Shared Video Player retain their familiar layouts while sharing the same media and state architecture",
+        "Staff Pad player-management actions expanded with Freeze, Send to Spawn, Media Lock and safer world-local restriction state",
+        "Permanent Unity staff roles plus optional remote Manager, Admin and Moderator assignments from config/staff.json",
+        "Supporter item registry added for rank-gated world items, doors, pickups and interactions",
+        "Remote background labels cleaned so technical GitHub/file wording never appears to visitors",
+        "Local media volume persistence and clearer Ready, Loading, Playing, Paused and Error states",
+        "Verdant cats preserve their existing manually positioned scene transforms during rebuilds"
+      ]
+    },
     {
       "version": "12.3.0",
       "date": "2026-10-04",

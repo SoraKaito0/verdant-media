@@ -4,11 +4,11 @@
   "defaultDisplaySeconds": 12,
   "items": [
     {
-      "id": "example-community",
-      "enabled": false,
-      "label": "COMMUNITY",
-      "title": "Example Community Poster",
-      "image": "ads/posters/example-community.png",
+      "id": "sponsored-slot-01",
+      "enabled": true,
+      "label": "SPONSORED",
+      "title": "Sponsored",
+      "image": "ads/posters/ad-01.png",
       "displaySeconds": 12
     }
   ]
