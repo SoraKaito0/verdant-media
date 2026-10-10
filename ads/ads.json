@@ -6,9 +6,9 @@
     {
       "id": "sponsored-slot-01",
       "enabled": true,
-      "label": "SPONSORED",
-      "title": "Sponsored",
-      "image": "ads/posters/ad-01.png",
+      "label": "COMMUNITY",
+      "title": "Become a supporter",
+      "image": "ads/posters/ad-02.png",
       "displaySeconds": 12
     }
   ]
