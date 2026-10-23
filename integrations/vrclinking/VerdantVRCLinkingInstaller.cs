@@ -115,7 +115,7 @@ public static class VerdantVRCLinkingInstaller
             GameObject authorityGo = new GameObject(AuthorityName);
             Undo.RegisterCreatedObjectUndo(authorityGo, "Create Verdant Role Authority");
             authorityGo.transform.SetParent(root.transform, false);
-            authority = UdonSharpEditorUtility.AddUdonSharpComponent<VerdantRoleAuthority>(authorityGo);
+            authority = authorityGo.AddUdonSharpComponent<VerdantRoleAuthority>();
         }
 
         Component downloader = FindSceneComponent(scene, downloaderType);
