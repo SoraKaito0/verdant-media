@@ -8,7 +8,7 @@
   "minimumPatchVersion": "15.0.0",
   "packageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Ad_Update_Manager.unitypackage",
   "releasePageUrl": "https://github.com/SoraKaito0/verdant-media/tree/main/releases",
-  "message": "V15.2 introduces Verdant's built-in editor updater. Projects older than V15 should use a full/cumulative Verdant base package before relying only on patch updates.",
+  "message": "V15.2 introduces Verdant's built-in updater. Projects older than V15 use the cumulative upgrade base; V15 projects can use the smaller latest patch.",
   "notes": [
     "Remote ad rotation now includes ad-03.",
     "Future poster uploads can sync into ads.json automatically.",
@@ -16,5 +16,7 @@
     "Download + Import Latest fetches the published Unity update package.",
     "YouTube RC3 cleanup removes unnecessary overlay/background layers.",
     "VRCLinking defaults now match the live Tier ... Discord role names."
-  ]
+  ],
+  "cumulativePackageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Cumulative_Upgrade_Base.unitypackage",
+  "cumulativePackageVersion": "15.2.0"
 }
