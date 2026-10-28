@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.0",
+  "latestVersion": "15.4.1",
   "entries": [
+    {
+      "version": "15.4.1",
+      "date": "2026-10-28",
+      "name": "Legacy Script Cleanup Hotfix",
+      "changes": [
+        "Changed Verdant VPM legacy cleanup from GUID-dependent matching to exact path matching",
+        "Removes duplicate legacy Verdant editor scripts under Assets during VCC update",
+        "Fixes duplicate VerdantVRCLinkingInstaller class/member compiler errors",
+        "Does not remove scene-specific objects or manually positioned world content"
+      ]
+    },
     {
       "version": "15.4.0",
       "date": "2026-10-28",
