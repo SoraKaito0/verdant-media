@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.4.5",
+  "latestVersion": "15.4.6",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -47,5 +47,5 @@
     "latest": "updates/latest.json",
     "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.4.5 directly fixes Main Board/iPad clock format sync, visible version labels, and supporter scroll stutter."
+  "message": "Verdant V15.4.6 restores the Tools menu with Udon-safe runtime code and an independent bootstrap menu."
 }
