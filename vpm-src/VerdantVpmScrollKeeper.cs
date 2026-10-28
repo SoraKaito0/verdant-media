@@ -8,10 +8,8 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
 {
     public ScrollRect scrollRect;
 
-    [Header("Smooth preservation")]
     [Range(0.05f, 0.5f)] public float resetJumpThreshold = 0.12f;
     [Range(0.9f, 1f)] public float topThreshold = 0.995f;
-    [Range(0.1f, 1f)] public float userGraceSeconds = 0.35f;
     [Range(0.1f, 1f)] public float restoreCooldownSeconds = 0.45f;
 
     private bool ready;
@@ -19,7 +17,6 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
     private float saved = 1f;
     private float lastObserved = 1f;
     private float lastHeight;
-    private float userGraceUntil;
     private float lastRestoreTime = -10f;
 
     private void Start()
@@ -33,31 +30,29 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
         if (scrollRect == null || scrollRect.content == null) return;
 
         float current = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
-        bool userActive = IsUserInteracting();
+        float height = scrollRect.content.rect.height;
+        bool moving = scrollRect.velocity.sqrMagnitude > 0.0001f;
+        bool heightChanged = Mathf.Abs(height - lastHeight) > 0.5f;
 
-        if (userActive)
+        if (moving)
         {
             saved = current;
             lastObserved = current;
-            userGraceUntil = Time.time + userGraceSeconds;
+            lastHeight = height;
             return;
         }
-
-        float height = scrollRect.content.rect.height;
-        bool heightChanged = Mathf.Abs(height - lastHeight) > 0.5f;
 
         if (heightChanged)
         {
             lastHeight = height;
 
-            if (saved < 0.995f && Time.time >= userGraceUntil)
+            if (saved < topThreshold)
                 ScheduleRestore();
 
             return;
         }
 
         bool suspiciousTopReset =
-            Time.time >= userGraceUntil &&
             Time.time - lastRestoreTime >= restoreCooldownSeconds &&
             current >= topThreshold &&
             saved < topThreshold &&
@@ -70,7 +65,6 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
             return;
         }
 
-        // Normal non-top movement becomes the remembered position.
         if (current < topThreshold)
             saved = current;
 
@@ -82,9 +76,6 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
         restorePending = false;
 
         if (scrollRect == null || scrollRect.content == null)
-            return;
-
-        if (Time.time < userGraceUntil)
             return;
 
         float current = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
@@ -102,24 +93,7 @@ public class VerdantVpmScrollKeeper : UdonSharpBehaviour
     {
         if (restorePending) return;
         restorePending = true;
-        SendCustomEventDelayedFrames(nameof(RestoreAfterLayout), 2);
-    }
-
-    private bool IsUserInteracting()
-    {
-        if (scrollRect == null) return false;
-
-        if (scrollRect.velocity.sqrMagnitude > 0.0001f)
-            return true;
-
-        if (Input.GetMouseButton(0))
-            return true;
-
-        Vector2 wheel = Input.mouseScrollDelta;
-        if (wheel.sqrMagnitude > 0.0001f)
-            return true;
-
-        return false;
+        SendCustomEventDelayedFrames("RestoreAfterLayout", 2);
     }
 
     private void Initialise()
