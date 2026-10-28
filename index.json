@@ -355,6 +355,41 @@
             "Assets\\VerdantBoard\\Scripts\\Integrations\\VerdantRoleAuthority.cs": "",
             "Assets\\VerdantBoard\\VERSION.txt": ""
           }
+        },
+        "15.4.9": {
+          "name": "com.sorakaito.verdant",
+          "displayName": "Verdant World System",
+          "version": "15.4.9",
+          "author": {
+            "name": "SoraKaito0",
+            "email": "59507954+SoraKaito0@users.noreply.github.com",
+            "url": "https://github.com/SoraKaito0"
+          },
+          "unity": "2022.3",
+          "description": "Verdant V15.4.9 styles the Main Board version as a matching Verdant HUD status card and keeps the iPad version on the same build number.",
+          "vpmDependencies": {
+            "com.vrchat.worlds": ">=3.10.0"
+          },
+          "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.9.zip",
+          "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
+          "keywords": [
+            "VRChat",
+            "Verdant",
+            "World",
+            "UdonSharp",
+            "VCC",
+            "VPM"
+          ],
+          "legacyFiles": {
+            "Assets\\VerdantBoard\\Editor\\VerdantUpdateManager.cs": "",
+            "Assets\\VerdantBoard\\Editor\\VerdantV15ReleaseFinalizer.cs": "",
+            "Assets\\VerdantBoard\\Editor\\VerdantV15RC2UIRepair.cs": "",
+            "Assets\\VerdantBoard\\Editor\\VerdantV15RC3YoutubeLayerCleanup.cs": "",
+            "Assets\\VerdantBoard\\Editor\\VerdantV15CumulativeUpgrade.cs": "",
+            "Assets\\VerdantBoard\\Editor\\VerdantVRCLinkingInstaller.cs": "",
+            "Assets\\VerdantBoard\\Scripts\\Integrations\\VerdantRoleAuthority.cs": "",
+            "Assets\\VerdantBoard\\VERSION.txt": ""
+          }
         }
       }
     }
