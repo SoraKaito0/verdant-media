@@ -2,7 +2,7 @@
   "name": "Verdant Packages",
   "id": "com.sorakaito.verdant.vpm",
   "url": "https://sorakaito0.github.io/verdant-media/index.json",
-  "author": "59507954+SoraKaito0@users.noreply.github.com",
+  "author": "SoraKaito0",
   "packages": {
     "com.sorakaito.verdant": {
       "versions": {
