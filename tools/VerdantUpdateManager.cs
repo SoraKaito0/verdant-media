@@ -7,7 +7,10 @@ using UnityEngine.Networking;
 public class VerdantUpdateManager : EditorWindow
 {
     private const string LocalVersionPath = "Assets/VerdantBoard/VERSION.txt";
+    private const string VpmPackageManifestPath = "Packages/com.sorakaito.verdant/package.json";
     private const string ManifestUrl = "https://sorakaito0.github.io/verdant-media/updates/latest.json";
+    private const string VpmRepositoryUrl = "https://sorakaito0.github.io/verdant-media/index.json";
+    private const string VpmAddUrl = "vcc://vpm/addRepo?url=https%3A%2F%2Fsorakaito0.github.io%2Fverdant-media%2Findex.json";
     private const string ReleasesUrl = "https://github.com/SoraKaito0/verdant-media/tree/main/releases";
 
     [Serializable]
@@ -23,6 +26,9 @@ public class VerdantUpdateManager : EditorWindow
         public string packageUrl;
         public string cumulativePackageUrl;
         public string cumulativePackageVersion;
+        public bool vpmPreferred;
+        public string vpmRepositoryUrl;
+        public string vpmPackageId;
         public string releasePageUrl;
         public string message;
         public string[] notes;
@@ -150,7 +156,9 @@ public class VerdantUpdateManager : EditorWindow
         EditorGUILayout.Space(8);
         EditorGUILayout.LabelField("Verdant Update Manager", EditorStyles.boldLabel);
         EditorGUILayout.LabelField(
-            "Checks the official Verdant update manifest and can download the latest published Unity update package.",
+            IsVpmManaged()
+                ? "This project is VCC/VPM-managed. VCC should be used to install and update Verdant."
+                : "Checks the official Verdant update manifest. New installs and future updates should use the Verdant VCC repository.",
             EditorStyles.wordWrappedLabel
         );
 
@@ -159,6 +167,7 @@ public class VerdantUpdateManager : EditorWindow
         using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
         {
             EditorGUILayout.LabelField("Installed version", string.IsNullOrEmpty(localVersion) ? "Legacy / unknown" : localVersion);
+            EditorGUILayout.LabelField("Package management", IsVpmManaged() ? "VCC / VPM" : "Legacy Assets / UnityPackage");
             EditorGUILayout.LabelField("Latest published", manifest != null ? manifest.latestVersion : "Not loaded");
             if (manifest != null && !string.IsNullOrWhiteSpace(manifest.cumulativePackageVersion))
                 EditorGUILayout.LabelField("Cumulative base", manifest.cumulativePackageVersion);
@@ -210,6 +219,8 @@ public class VerdantUpdateManager : EditorWindow
             !string.IsNullOrWhiteSpace(manifest.minimumPatchVersion) &&
             CompareVersions(localVersion, manifest.minimumPatchVersion) < 0;
 
+        bool vpmPreferred = manifest != null && manifest.vpmPreferred;
+
         using (new EditorGUILayout.HorizontalScope())
         {
             GUI.enabled = request == null;
@@ -219,6 +230,8 @@ public class VerdantUpdateManager : EditorWindow
             GUI.enabled = manifest != null &&
                           request == null &&
                           CompareVersions(localVersion, manifest.latestVersion) < 0 &&
+                          !IsVpmManaged() &&
+                          !vpmPreferred &&
                           ((!needsCumulative && !string.IsNullOrWhiteSpace(manifest.packageUrl)) ||
                            (needsCumulative && !string.IsNullOrWhiteSpace(manifest.cumulativePackageUrl)));
 
@@ -232,6 +245,19 @@ public class VerdantUpdateManager : EditorWindow
             }
 
             GUI.enabled = true;
+        }
+
+        EditorGUILayout.Space(4);
+        using (new EditorGUILayout.HorizontalScope())
+        {
+            if (GUILayout.Button("Add Verdant Repository to VCC", GUILayout.Height(32f)))
+                Application.OpenURL(VpmAddUrl);
+
+            if (GUILayout.Button("Copy VCC Repository URL", GUILayout.Height(32f)))
+            {
+                EditorGUIUtility.systemCopyBuffer = VpmRepositoryUrl;
+                status = "Verdant VCC repository URL copied.";
+            }
         }
 
         using (new EditorGUILayout.HorizontalScope())
@@ -250,7 +276,9 @@ public class VerdantUpdateManager : EditorWindow
 
         EditorGUILayout.Space(8);
         EditorGUILayout.HelpBox(
-            "From V15.2 onward, keep this updater in every Verdant project. When a future update is published, this window will show the new version and offer the update package.",
+            IsVpmManaged()
+                ? "Verdant is installed as a VPM package. Update it from VCC > Manage Project; the package files under Packages are managed by VCC."
+                : "Legacy project detected. Add the Verdant repository to VCC, then install Verdant World System. Keep scene-specific objects and transforms in Assets/your scene, not inside the package.",
             MessageType.None
         );
 
@@ -336,6 +364,14 @@ public class VerdantUpdateManager : EditorWindow
     {
         try
         {
+            if (File.Exists(VpmPackageManifestPath))
+            {
+                string json = File.ReadAllText(VpmPackageManifestPath);
+                PackageVersionManifest manifest = JsonUtility.FromJson<PackageVersionManifest>(json);
+                if (manifest != null && !string.IsNullOrWhiteSpace(manifest.version))
+                    return manifest.version.Trim();
+            }
+
             if (!File.Exists(LocalVersionPath)) return "0.0.0";
             string value = File.ReadAllText(LocalVersionPath).Trim();
             return string.IsNullOrWhiteSpace(value) ? "0.0.0" : value;
@@ -344,6 +380,17 @@ public class VerdantUpdateManager : EditorWindow
         {
             return "0.0.0";
         }
+    }
+
+    [Serializable]
+    private class PackageVersionManifest
+    {
+        public string version;
+    }
+
+    private static bool IsVpmManaged()
+    {
+        return File.Exists(VpmPackageManifestPath);
     }
 
     private static int CompareVersions(string a, string b)
