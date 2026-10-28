@@ -44,6 +44,7 @@ public static class VerdantV15CumulativeUpgrade
         int rc2Changes = 0;
         int rc3Changes = 0;
         string warning = "";
+        bool migrationFailed = false;
 
         try
         {
@@ -51,7 +52,8 @@ public static class VerdantV15CumulativeUpgrade
         }
         catch (Exception ex)
         {
-            warning += "RC1 stage warning: " + RootMessage(ex) + "\n";
+            warning += "RC1 stage failed: " + RootMessage(ex) + "\n";
+            migrationFailed = true;
             Debug.LogException(ex);
         }
 
@@ -61,7 +63,8 @@ public static class VerdantV15CumulativeUpgrade
         }
         catch (Exception ex)
         {
-            warning += "RC2 stage warning: " + RootMessage(ex) + "\n";
+            warning += "RC2 stage failed: " + RootMessage(ex) + "\n";
+            migrationFailed = true;
             Debug.LogException(ex);
         }
 
@@ -71,11 +74,13 @@ public static class VerdantV15CumulativeUpgrade
         }
         catch (Exception ex)
         {
-            warning += "RC3 stage warning: " + RootMessage(ex) + "\n";
+            warning += "RC3 stage failed: " + RootMessage(ex) + "\n";
+            migrationFailed = true;
             Debug.LogException(ex);
         }
 
-        StampVersion(scene, TargetVersion);
+        if (!migrationFailed)
+            StampVersion(scene, TargetVersion);
 
         EditorSceneManager.MarkSceneDirty(scene);
         if (!string.IsNullOrEmpty(scene.path))
@@ -90,14 +95,14 @@ public static class VerdantV15CumulativeUpgrade
             "RC1 media/stability actions: " + rc1Changes + "\n" +
             "RC2 UI/media actions: " + rc2Changes + "\n" +
             "RC3 YouTube cleanup actions: " + rc3Changes + "\n" +
-            "Version marker: " + VersionPath + "\n";
+            "Version marker: " + (!migrationFailed ? VersionPath : "NOT UPDATED because a migration stage failed") + "\n";
 
         if (!string.IsNullOrEmpty(warning))
             summary += "\nWarnings:\n" + warning;
 
-        summary +=
-            "\nA scene backup was created before any migration changes.\n" +
-            "Now use Tools > Verdant Board > Updates > Update Manager to verify the installed/latest version.";
+        summary += migrationFailed
+            ? "\nA scene backup was created. Fix the reported migration error and run the cumulative upgrade again; the installed version was intentionally not changed."
+            : "\nA scene backup was created before any migration changes.\nNow use Tools > Verdant Board > Updates > Update Manager to verify the installed/latest version.";
 
         Debug.Log("[Verdant V15.2 Cumulative] " + summary.Replace("\n", " | "));
         EditorUtility.DisplayDialog("Verdant V15.2 Cumulative Upgrade", summary, "OK");
