@@ -1,7 +1,20 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.2.0",
+  "latestVersion": "15.3.0",
   "entries": [
+    {
+      "version": "15.3.0",
+      "date": "2026-10-28",
+      "name": "VCC / VPM Package Conversion",
+      "changes": [
+        "Published Verdant Packages as a VCC community repository",
+        "Added Verdant World System package ID com.sorakaito.verdant",
+        "Added VCC-aware version detection to the Verdant Update Manager",
+        "Preserved Unity GUIDs for migrated Verdant scripts so scene references survive package migration",
+        "Kept world scenes, manually positioned objects and project-specific assets outside the VPM package",
+        "Kept VRCLinking, AudioLink and ProTV as optional integrations"
+      ]
+    },
     {
       "version": "15.2.0",
       "date": "2026-10-28",
