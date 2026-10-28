@@ -10,6 +10,18 @@
       "title": "Become a supporter",
       "image": "ads/posters/ad-02.png",
       "displaySeconds": 12
+    },
+    {
+      "id": "community-slot-02",
+      "enabled": true,
+      "label": "COMMUNITY",
+      "title": "Featured",
+      "image": "ads/posters/ad-03.png",
+      "displaySeconds": 12
     }
+  ],
+  "catalogVersion": 2,
+  "ignoredImages": [
+    "ads/posters/ad-01.png"
   ]
 }
