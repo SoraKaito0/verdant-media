@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.3",
+  "latestVersion": "15.4.4",
   "entries": [
+    {
+      "version": "15.4.4",
+      "date": "2026-10-28",
+      "name": "VPM Assembly + Role Authority Repair",
+      "changes": [
+        "Added proper Runtime and Editor assembly definitions to the VCC package",
+        "Registered the Verdant Runtime assembly with UdonSharp",
+        "Restored VerdantRoleAuthority in the package with its original GUID",
+        "Fixed package Editor scripts not compiling from Packages",
+        "Preserved the collision-proof V15.4 UI fix installer"
+      ]
+    },
     {
       "version": "15.4.3",
       "date": "2026-10-28",
