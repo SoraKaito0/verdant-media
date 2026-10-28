@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.8",
+  "latestVersion": "15.4.9",
   "entries": [
+    {
+      "version": "15.4.9",
+      "date": "2026-10-28",
+      "name": "Styled Version Card + Tablet Version Sync",
+      "changes": [
+        "Replaced the bare Main Board version text with a styled Verdant status card",
+        "Copied nearby PLAYERS card visual styling where available",
+        "Added VERSION / 15.4.9 two-line layout with Verdant accent",
+        "Updated the iPad version to the same 15.4.9 build number",
+        "Kept supporter ownership fixes from V15.4.8"
+      ]
+    },
     {
       "version": "15.4.8",
       "date": "2026-10-28",
