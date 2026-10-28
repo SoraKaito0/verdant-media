@@ -8,15 +8,19 @@ using TMPro;
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class VerdantVpmSharedClock : UdonSharpBehaviour
 {
-    [Header("Clock outputs")]
     public TMP_Text[] tmpClockTexts;
     public Text[] legacyClockTexts;
 
-    [Header("Time-format controls")]
     public Toggle[] formatToggles;
     public bool[] toggleOnMeans24Hour;
+
     public TMP_Dropdown[] tmpFormatDropdowns;
+    public int[] tmpDropdown12Values;
+    public int[] tmpDropdown24Values;
+
     public Dropdown[] legacyFormatDropdowns;
+    public int[] legacyDropdown12Values;
+    public int[] legacyDropdown24Values;
 
     public bool use24Hour = true;
     [Range(0.05f, 1f)] public float refreshInterval = 0.1f;
@@ -28,13 +32,15 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
 
     private void Start()
     {
-        CacheControlStates();
+        CacheStates();
         RefreshClock();
     }
 
     private void Update()
     {
-        PollControls();
+        PollToggles();
+        PollTmpDropdowns();
+        PollLegacyDropdowns();
     }
 
     private void LateUpdate()
@@ -55,7 +61,7 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
         RefreshClock();
     }
 
-    private void CacheControlStates()
+    private void CacheStates()
     {
         int toggleCount = formatToggles != null ? formatToggles.Length : 0;
         lastToggleStates = new bool[toggleCount];
@@ -76,19 +82,12 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
             lastLegacyDropdownValues[i] = legacyFormatDropdowns[i] != null ? legacyFormatDropdowns[i].value : -1;
     }
 
-    private void PollControls()
-    {
-        PollToggles();
-        PollTmpDropdowns();
-        PollLegacyDropdowns();
-    }
-
     private void PollToggles()
     {
         if (formatToggles == null) return;
 
         if (lastToggleStates == null || lastToggleStates.Length != formatToggles.Length)
-            CacheControlStates();
+            CacheStates();
 
         for (int i = 0; i < formatToggles.Length; i++)
         {
@@ -113,7 +112,7 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
         if (tmpFormatDropdowns == null) return;
 
         if (lastTmpDropdownValues == null || lastTmpDropdownValues.Length != tmpFormatDropdowns.Length)
-            CacheControlStates();
+            CacheStates();
 
         for (int i = 0; i < tmpFormatDropdowns.Length; i++)
         {
@@ -124,8 +123,18 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
             if (current == lastTmpDropdownValues[i]) continue;
 
             lastTmpDropdownValues[i] = current;
-            ApplyDropdownValue(dropdown.options, current);
-            return;
+
+            if (tmpDropdown24Values != null && i < tmpDropdown24Values.Length && current == tmpDropdown24Values[i])
+            {
+                SetFormat(true);
+                return;
+            }
+
+            if (tmpDropdown12Values != null && i < tmpDropdown12Values.Length && current == tmpDropdown12Values[i])
+            {
+                SetFormat(false);
+                return;
+            }
         }
     }
 
@@ -134,7 +143,7 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
         if (legacyFormatDropdowns == null) return;
 
         if (lastLegacyDropdownValues == null || lastLegacyDropdownValues.Length != legacyFormatDropdowns.Length)
-            CacheControlStates();
+            CacheStates();
 
         for (int i = 0; i < legacyFormatDropdowns.Length; i++)
         {
@@ -146,32 +155,18 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
 
             lastLegacyDropdownValues[i] = current;
 
-            if (current >= 0 && current < dropdown.options.Count)
+            if (legacyDropdown24Values != null && i < legacyDropdown24Values.Length && current == legacyDropdown24Values[i])
             {
-                string label = dropdown.options[current].text;
-                ApplyFormatLabel(label);
+                SetFormat(true);
+                return;
             }
 
-            return;
+            if (legacyDropdown12Values != null && i < legacyDropdown12Values.Length && current == legacyDropdown12Values[i])
+            {
+                SetFormat(false);
+                return;
+            }
         }
-    }
-
-    private void ApplyDropdownValue(System.Collections.Generic.List<TMP_Dropdown.OptionData> options, int value)
-    {
-        if (options == null || value < 0 || value >= options.Count) return;
-        ApplyFormatLabel(options[value].text);
-    }
-
-    private void ApplyFormatLabel(string label)
-    {
-        if (string.IsNullOrEmpty(label)) return;
-
-        string lower = label.ToLower();
-
-        if (lower.Contains("24"))
-            SetFormat(true);
-        else if (lower.Contains("12"))
-            SetFormat(false);
     }
 
     private void ApplyToggleState()
@@ -191,10 +186,7 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
                              toggleOnMeans24Hour[i];
 
             bool desired = onMeans24 ? use24Hour : !use24Hour;
-
-            if (toggle.isOn != desired)
-                toggle.isOn = desired;
-
+            if (toggle.isOn != desired) toggle.isOn = desired;
             lastToggleStates[i] = toggle.isOn;
         }
     }
@@ -208,34 +200,28 @@ public class VerdantVpmSharedClock : UdonSharpBehaviour
 
         if (use24Hour)
         {
-            string hourText = hour < 10 ? "0" + hour.ToString() : hour.ToString();
-            value = hourText + ":" + minute;
+            string h = hour < 10 ? "0" + hour.ToString() : hour.ToString();
+            value = h + ":" + minute;
         }
         else
         {
-            int displayHour = hour % 12;
-            if (displayHour == 0) displayHour = 12;
-            value = displayHour.ToString() + ":" + minute + (hour >= 12 ? " PM" : " AM");
+            int h = hour % 12;
+            if (h == 0) h = 12;
+            value = h.ToString() + ":" + minute + (hour >= 12 ? " PM" : " AM");
         }
 
         if (tmpClockTexts != null)
         {
             for (int i = 0; i < tmpClockTexts.Length; i++)
-            {
-                TMP_Text text = tmpClockTexts[i];
-                if (text != null && text.text != value)
-                    text.text = value;
-            }
+                if (tmpClockTexts[i] != null && tmpClockTexts[i].text != value)
+                    tmpClockTexts[i].text = value;
         }
 
         if (legacyClockTexts != null)
         {
             for (int i = 0; i < legacyClockTexts.Length; i++)
-            {
-                Text text = legacyClockTexts[i];
-                if (text != null && text.text != value)
-                    text.text = value;
-            }
+                if (legacyClockTexts[i] != null && legacyClockTexts[i].text != value)
+                    legacyClockTexts[i].text = value;
         }
     }
 }
