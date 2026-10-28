@@ -7,22 +7,38 @@
 <style>
 body{font-family:system-ui,-apple-system,sans-serif;background:#07140d;color:#dff7df;max-width:900px;margin:60px auto;padding:0 24px;line-height:1.55}
 .card{background:#0d2116;padding:18px 20px;border-radius:14px;margin:14px 0}
-code{background:#142b1d;padding:.15rem .4rem;border-radius:5px}
+code{background:#142b1d;padding:.15rem .4rem;border-radius:5px;word-break:break-all}
 small{opacity:.7}
+a.button{display:inline-block;margin-top:12px;padding:11px 16px;background:#91b874;color:#07140d;text-decoration:none;border-radius:9px;font-weight:700}
 </style>
 </head>
 <body>
 <h1>Verdant Network</h1>
-<p>Remote content service for Verdant-enabled VRChat worlds.</p>
-<div class="card"><strong>Status:</strong> Online<br><small>GitHub Pages remote content endpoint</small></div>
+<p>Remote content and package service for Verdant-enabled VRChat worlds.</p>
+
+<div class="card">
+<strong>Status:</strong> Online<br>
+<small>GitHub Pages remote content endpoint</small>
+</div>
+
+<div class="card">
+<strong>Verdant World System 15.3.0</strong><br>
+Install and update Verdant through VRChat Creator Companion.<br>
+<a class="button" href="vcc://vpm/addRepo?url=https%3A%2F%2Fsorakaito0.github.io%2Fverdant-media%2Findex.json">Add Verdant to VCC</a>
+<br><br>
+<small>Repository URL</small><br>
+<code>https://sorakaito0.github.io/verdant-media/index.json</code>
+</div>
+
 <div class="card">
 <strong>Important paths</strong><br>
 <code>/config/verdant.json</code><br>
 <code>/announcements/current.txt</code><br>
 <code>/ads/ads.json</code><br>
 <code>/badges/badges.json</code><br>
-<code>/supporters/supporters.json</code><br>
-<code>/gallery/gallery.json</code>
+<code>/config/supporters.json</code><br>
+<code>/gallery/gallery.json</code><br>
+<code>/updates/latest.json</code>
 </div>
 </body>
 </html>
