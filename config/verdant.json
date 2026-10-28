@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.4.2",
+  "latestVersion": "15.4.3",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -47,5 +47,5 @@
     "latest": "updates/latest.json",
     "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.4.2 fixes supporter scrolling, Main Board/iPad clock sync, and restores the Main Board version label."
+  "message": "Verdant V15.4.3 makes the VCC package collision-proof against legacy extracted scripts."
 }
