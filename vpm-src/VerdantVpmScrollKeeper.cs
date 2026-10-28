@@ -7,62 +7,135 @@ using UnityEngine.UI;
 public class VerdantVpmScrollKeeper : UdonSharpBehaviour
 {
     public ScrollRect scrollRect;
-    [Range(0.01f, 0.5f)] public float resetJumpThreshold = 0.08f;
-    [Range(0.9f, 1f)] public float topThreshold = 0.992f;
+
+    [Header("Smooth preservation")]
+    [Range(0.05f, 0.5f)] public float resetJumpThreshold = 0.12f;
+    [Range(0.9f, 1f)] public float topThreshold = 0.995f;
+    [Range(0.1f, 1f)] public float userGraceSeconds = 0.35f;
+    [Range(0.1f, 1f)] public float restoreCooldownSeconds = 0.45f;
 
     private bool ready;
+    private bool restorePending;
     private float saved = 1f;
-    private float last = 1f;
+    private float lastObserved = 1f;
     private float lastHeight;
+    private float userGraceUntil;
+    private float lastRestoreTime = -10f;
 
-    private void Start() { Initialise(); }
-
-    private void Update()
+    private void Start()
     {
-        if (!ready || scrollRect == null) return;
-        if (scrollRect.velocity.sqrMagnitude > 0.00005f)
-        {
-            saved = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
-            last = saved;
-        }
+        Initialise();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (!ready) Initialise();
         if (scrollRect == null || scrollRect.content == null) return;
 
         float current = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
-        float height = scrollRect.content.rect.height;
-        bool moving = scrollRect.velocity.sqrMagnitude > 0.00005f;
-        bool heightChanged = Mathf.Abs(height - lastHeight) > 0.25f;
-        bool snappedTop = !moving && current >= topThreshold && saved < topThreshold &&
-                          current - saved >= resetJumpThreshold;
+        bool userActive = IsUserInteracting();
 
-        if ((heightChanged || snappedTop) && saved < 0.999f)
+        if (userActive)
+        {
+            saved = current;
+            lastObserved = current;
+            userGraceUntil = Time.time + userGraceSeconds;
+            return;
+        }
+
+        float height = scrollRect.content.rect.height;
+        bool heightChanged = Mathf.Abs(height - lastHeight) > 0.5f;
+
+        if (heightChanged)
+        {
+            lastHeight = height;
+
+            if (saved < 0.995f && Time.time >= userGraceUntil)
+                ScheduleRestore();
+
+            return;
+        }
+
+        bool suspiciousTopReset =
+            Time.time >= userGraceUntil &&
+            Time.time - lastRestoreTime >= restoreCooldownSeconds &&
+            current >= topThreshold &&
+            saved < topThreshold &&
+            lastObserved < topThreshold &&
+            current - saved >= resetJumpThreshold;
+
+        if (suspiciousTopReset)
+        {
+            ScheduleRestore();
+            return;
+        }
+
+        // Normal non-top movement becomes the remembered position.
+        if (current < topThreshold)
+            saved = current;
+
+        lastObserved = current;
+    }
+
+    public void RestoreAfterLayout()
+    {
+        restorePending = false;
+
+        if (scrollRect == null || scrollRect.content == null)
+            return;
+
+        if (Time.time < userGraceUntil)
+            return;
+
+        float current = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
+
+        if (saved < topThreshold && current >= topThreshold)
         {
             scrollRect.StopMovement();
             scrollRect.verticalNormalizedPosition = saved;
-            current = saved;
+            lastObserved = saved;
+            lastRestoreTime = Time.time;
         }
-        else
-        {
-            float delta = Mathf.Abs(current - last);
-            if (moving || current < topThreshold || delta < resetJumpThreshold)
-                saved = current;
-        }
+    }
 
-        last = current;
-        lastHeight = height;
+    private void ScheduleRestore()
+    {
+        if (restorePending) return;
+        restorePending = true;
+        SendCustomEventDelayedFrames(nameof(RestoreAfterLayout), 2);
+    }
+
+    private bool IsUserInteracting()
+    {
+        if (scrollRect == null) return false;
+
+        if (scrollRect.velocity.sqrMagnitude > 0.0001f)
+            return true;
+
+        if (Input.GetMouseButton(0))
+            return true;
+
+        Vector2 wheel = Input.mouseScrollDelta;
+        if (wheel.sqrMagnitude > 0.0001f)
+            return true;
+
+        return false;
     }
 
     private void Initialise()
     {
-        if (scrollRect == null) scrollRect = GetComponent<ScrollRect>();
-        if (scrollRect == null) return;
+        if (scrollRect == null)
+            scrollRect = GetComponent<ScrollRect>();
+
+        if (scrollRect == null)
+            return;
+
         saved = Mathf.Clamp01(scrollRect.verticalNormalizedPosition);
-        last = saved;
-        if (scrollRect.content != null) lastHeight = scrollRect.content.rect.height;
+        lastObserved = saved;
+
+        if (scrollRect.content != null)
+            lastHeight = scrollRect.content.rect.height;
+
         ready = true;
     }
 }
