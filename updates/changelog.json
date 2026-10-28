@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.3.0",
+  "latestVersion": "15.4.0",
   "entries": [
+    {
+      "version": "15.4.0",
+      "date": "2026-10-28",
+      "name": "Supporter Scroll + Shared Clock Fix",
+      "changes": [
+        "Preserved supporter/member recognition scroll position during list and layout refreshes",
+        "Added a shared Verdant clock controller for Main Board and iPad displays",
+        "Synced 12/24-hour state across linked Verdant clock controls",
+        "Removed reliance on manual UTC offsets for clock output",
+        "Added a one-click scene installer with automatic backup"
+      ]
+    },
     {
       "version": "15.3.0",
       "date": "2026-10-28",
