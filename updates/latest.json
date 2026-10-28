@@ -1,20 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.2",
-  "releaseName": "Supporters + Clock + Version Hotfix",
+  "latestVersion": "15.4.3",
+  "releaseName": "Collision-Proof VPM Tools Hotfix",
   "published": "2026-10-28",
   "channel": "stable",
   "packageType": "patch",
   "minimumPatchVersion": "15.0.0",
   "packageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Ad_Update_Manager.unitypackage",
   "releasePageUrl": "https://github.com/SoraKaito0/verdant-media/tree/main/releases",
-  "message": "Verdant 15.4.2 is available through VCC. Update the package, then run the V15.4.2 Supporters + Clock + Version Fix once in Unity.",
+  "message": "Verdant 15.4.3 fixes missing Tools menus caused by old extracted Verdant scripts colliding with the VCC package.",
   "notes": [
-    "Protects every vertical ScrollRect in the Supporters/Support board against programmatic snap-to-top refreshes.",
-    "Detects actual time-looking labels on the Main Board and iPad, not only objects explicitly named Clock.",
-    "Wires detected 12-hour and 24-hour buttons to one shared Verdant clock state.",
-    "Runs the scroll guard and shared clock late so older Verdant scripts are less likely to overwrite them.",
-    "Restores or creates a small version label on the Main Board."
+    "VPM runtime/editor classes now use unique package-specific names.",
+    "Old Assets/VerdantBoard scripts can remain without duplicating the same package class names.",
+    "Adds Tools > Verdant Board > Diagnostics > Show VPM Status so package load can be confirmed immediately.",
+    "Includes the supporter scroll, shared clock and Main Board version-label installer."
   ],
   "cumulativePackageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Cumulative_Upgrade_Base.unitypackage",
   "cumulativePackageVersion": "15.2.0",
