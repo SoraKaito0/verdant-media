@@ -1,18 +1,18 @@
 {
   "name": "com.sorakaito.verdant",
   "displayName": "Verdant World System",
-  "version": "15.4.7",
+  "version": "15.4.8",
   "author": {
     "name": "SoraKaito0",
     "email": "59507954+SoraKaito0@users.noreply.github.com",
     "url": "https://github.com/SoraKaito0"
   },
   "unity": "2022.3",
-  "description": "Verdant V15.4.7 replaces the stale VerdantVpmSharedClock type with a brand-new clock controller class/file/GUID and retains the independent diagnostics menu.",
+  "description": "Verdant V15.4.8 gives the Supporters list a single owner, disables duplicate legacy supporter roots, removes old scroll keepers, and places a visible Main Board version label on the active board Canvas.",
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.10.0"
   },
-  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.7.zip",
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.8.zip",
   "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
   "keywords": [
     "VRChat",
