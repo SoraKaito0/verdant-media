@@ -1,18 +1,18 @@
 {
   "name": "com.sorakaito.verdant",
   "displayName": "Verdant World System",
-  "version": "15.4.1",
+  "version": "15.4.2",
   "author": {
     "name": "SoraKaito0",
     "email": "59507954+SoraKaito0@users.noreply.github.com",
     "url": "https://github.com/SoraKaito0"
   },
   "unity": "2022.3",
-  "description": "Verdant V15.4.1 hotfix: path-based cleanup of legacy UnityPackage scripts to prevent duplicate-class compile errors.",
+  "description": "Verdant V15.4.2 fixes supporter-page scroll resets, synchronizes 12/24-hour clock state across Main Board and iPad, and restores the Main Board version label.",
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.10.0"
   },
-  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.1.zip",
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.2.zip",
   "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
   "keywords": [
     "VRChat",
