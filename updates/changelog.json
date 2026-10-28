@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.1",
+  "latestVersion": "15.4.2",
   "entries": [
+    {
+      "version": "15.4.2",
+      "date": "2026-10-28",
+      "name": "Supporters + Clock + Version Hotfix",
+      "changes": [
+        "Broadened supporter-page ScrollRect detection so dynamically rebuilt name sections are protected",
+        "Strengthened scroll reset protection and moved it to a later execution order",
+        "Broadened clock discovery to include real time-looking TMP and legacy Text labels",
+        "Wired detected 12h/24h buttons to the shared clock state",
+        "Restored or created a Main Board V15.4.2 version label"
+      ]
+    },
     {
       "version": "15.4.1",
       "date": "2026-10-28",
