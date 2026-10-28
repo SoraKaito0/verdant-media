@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[DefaultExecutionOrder(32000)]
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class VerdantSharedClock : UdonSharpBehaviour
 {
     [Header("Clock displays")]
     public TMP_Text[] clockTexts;
+    public Text[] legacyClockTexts;
 
     [Header("12 / 24 hour controls")]
     public Toggle[] formatToggles;
@@ -16,7 +18,7 @@ public class VerdantSharedClock : UdonSharpBehaviour
     public bool use24Hour = true;
 
     [Header("Refresh")]
-    [Range(0.05f, 2f)] public float refreshInterval = 0.25f;
+    [Range(0.05f, 2f)] public float refreshInterval = 0.15f;
 
     private bool[] _lastToggleStates;
     private bool _toggleStateReady;
@@ -57,16 +59,10 @@ public class VerdantSharedClock : UdonSharpBehaviour
 
     private void InitialiseToggleState()
     {
-        if (formatToggles == null)
-        {
-            _lastToggleStates = new bool[0];
-            _toggleStateReady = true;
-            return;
-        }
+        int count = formatToggles != null ? formatToggles.Length : 0;
+        _lastToggleStates = new bool[count];
 
-        _lastToggleStates = new bool[formatToggles.Length];
-
-        for (int i = 0; i < formatToggles.Length; i++)
+        for (int i = 0; i < count; i++)
         {
             Toggle toggle = formatToggles[i];
             _lastToggleStates[i] = toggle != null && toggle.isOn;
@@ -84,7 +80,11 @@ public class VerdantSharedClock : UdonSharpBehaviour
         if (formatToggles == null || _lastToggleStates == null) return;
 
         int count = formatToggles.Length;
-        if (_lastToggleStates.Length < count) return;
+        if (_lastToggleStates.Length != count)
+        {
+            InitialiseToggleState();
+            return;
+        }
 
         for (int i = 0; i < count; i++)
         {
@@ -156,13 +156,24 @@ public class VerdantSharedClock : UdonSharpBehaviour
             value = displayHour.ToString() + ":" + TwoDigits(minute) + (hour >= 12 ? " PM" : " AM");
         }
 
-        if (clockTexts == null) return;
-
-        for (int i = 0; i < clockTexts.Length; i++)
+        if (clockTexts != null)
         {
-            TMP_Text text = clockTexts[i];
-            if (text != null && text.text != value)
-                text.text = value;
+            for (int i = 0; i < clockTexts.Length; i++)
+            {
+                TMP_Text text = clockTexts[i];
+                if (text != null && text.text != value)
+                    text.text = value;
+            }
+        }
+
+        if (legacyClockTexts != null)
+        {
+            for (int i = 0; i < legacyClockTexts.Length; i++)
+            {
+                Text text = legacyClockTexts[i];
+                if (text != null && text.text != value)
+                    text.text = value;
+            }
         }
     }
 
