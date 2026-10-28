@@ -1,7 +1,20 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.4",
+  "latestVersion": "15.4.5",
   "entries": [
+    {
+      "version": "15.4.5",
+      "date": "2026-10-28",
+      "name": "Direct Clock + Version + Smooth Supporters Repair",
+      "changes": [
+        "Added Toggle, TMP_Dropdown and legacy Dropdown support for 12/24-hour format",
+        "Scoped clock discovery to the actual VerdantBoard and VerdantTablet roots",
+        "Detached legacy clock-writer text references so one shared controller owns the clock output",
+        "Updated all visible Verdant version labels including old iPad Version 14.5 text",
+        "Added a Main Board version label when missing",
+        "Reworked supporter scrolling to restore only after layout resets instead of fighting the ScrollRect every frame"
+      ]
+    },
     {
       "version": "15.4.4",
       "date": "2026-10-28",
