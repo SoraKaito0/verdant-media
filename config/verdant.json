@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 14,
+  "schemaVersion": 15,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.2.0",
+  "latestVersion": "15.3.0",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -23,7 +23,8 @@
     "unifiedMedia": true,
     "supporterItems": true,
     "worldModeration": true,
-    "supporterPortals": true
+    "supporterPortals": true,
+    "vccPackage": true
   },
   "paths": {
     "announcements": "announcements/announcements.json",
@@ -40,7 +41,9 @@
     "worlds": "config/worlds.json",
     "modules": "config/modules.json",
     "status": "updates/status.json",
-    "changelog": "updates/changelog.json"
+    "changelog": "updates/changelog.json",
+    "latest": "updates/latest.json",
+    "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.2.0 adds automatic ad catalogue syncing, the editor Update Manager, YouTube layer cleanup, and current VRCLinking role defaults."
+  "message": "Verdant V15.3.0 is available through the Verdant Packages VCC/VPM repository."
 }
