@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.6",
+  "latestVersion": "15.4.7",
   "entries": [
+    {
+      "version": "15.4.7",
+      "date": "2026-10-28",
+      "name": "Fresh Clock Controller Type Hotfix",
+      "changes": [
+        "Replaced the stale VerdantVpmSharedClock runtime type with VerdantClockController1547",
+        "Assigned a new file and GUID to the clock controller",
+        "Updated the Editor installer to reference only the new clock controller type",
+        "Kept the independent diagnostics assembly and repaired VPM structure"
+      ]
+    },
     {
       "version": "15.4.6",
       "date": "2026-10-28",
