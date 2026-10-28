@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.4.7",
+  "latestVersion": "15.4.8",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -47,5 +47,5 @@
     "latest": "updates/latest.json",
     "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.4.7 fixes the stale clock-controller type mismatch while retaining the VPM menu/assembly repairs."
+  "message": "Verdant V15.4.8 fixes supporter-layout reversion/stutter and the missing Main Board version label."
 }
