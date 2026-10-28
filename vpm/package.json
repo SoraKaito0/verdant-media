@@ -1,18 +1,18 @@
 {
   "name": "com.sorakaito.verdant",
   "displayName": "Verdant World System",
-  "version": "15.4.4",
+  "version": "15.4.5",
   "author": {
     "name": "SoraKaito0",
     "email": "59507954+SoraKaito0@users.noreply.github.com",
     "url": "https://github.com/SoraKaito0"
   },
   "unity": "2022.3",
-  "description": "Verdant V15.4.4 packaging repair: proper Runtime/Editor assembly definitions, UdonSharp assembly registration, and restored VerdantRoleAuthority for VRCLinking.",
+  "description": "Verdant V15.4.5 directly owns Main Board/iPad clock state, supports 12/24 dropdowns, updates all visible Verdant version labels, and smooths supporter scrolling.",
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.10.0"
   },
-  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.4.zip",
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.5.zip",
   "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
   "keywords": [
     "VRChat",
