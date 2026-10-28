@@ -237,11 +237,11 @@ public class VerdantVRCLinkingBridge : " + baseName + @"
 
     [Header(""Discord role names - supporter hierarchy"")]
     public string memberRole = ""Member"";
-    public string basicRole = ""Basic"";
-    public string supporterRole = ""Supporter"";
-    public string vipRole = ""VIP"";
-    public string eliteRole = ""Elite"";
-    public string guardianRole = ""Guardian"";
+    public string basicRole = ""Tier Basic"";
+    public string supporterRole = ""Tier Supporter"";
+    public string vipRole = ""Tier VIP"";
+    public string eliteRole = ""Tier Elite"";
+    public string guardianRole = ""Tier Guardian"";
 
     [Header(""Discord role names - staff hierarchy"")]
     public string moderatorRole = ""Moderator"";
@@ -367,11 +367,11 @@ public class VerdantVRCLinkingBridge : " + baseName + @"
         if (authorityProp != null) authorityProp.objectReferenceValue = authority;
 
         SetString(so, "memberRole", "Member");
-        SetString(so, "basicRole", "Basic");
-        SetString(so, "supporterRole", "Supporter");
-        SetString(so, "vipRole", "VIP");
-        SetString(so, "eliteRole", "Elite");
-        SetString(so, "guardianRole", "Guardian");
+        SetString(so, "basicRole", "Tier Basic");
+        SetString(so, "supporterRole", "Tier Supporter");
+        SetString(so, "vipRole", "Tier VIP");
+        SetString(so, "eliteRole", "Tier Elite");
+        SetString(so, "guardianRole", "Tier Guardian");
         SetString(so, "moderatorRole", "Moderator");
         SetString(so, "adminRole", "Admin");
         SetString(so, "managerRole", "Manager");
