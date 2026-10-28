@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.7",
+  "latestVersion": "15.4.8",
   "entries": [
+    {
+      "version": "15.4.8",
+      "date": "2026-10-28",
+      "name": "Supporter Ownership + Main Board Version Repair",
+      "changes": [
+        "Added single-owner runtime control for the Supporters list",
+        "Disabled duplicate legacy supporter UI branches that could reappear after refresh",
+        "Removed old supporter scroll keeper components to stop slider stutter",
+        "Moved missing Main Board version creation onto the active board Canvas",
+        "Scaled the Main Board version label from existing board typography"
+      ]
+    },
     {
       "version": "15.4.7",
       "date": "2026-10-28",
