@@ -10,8 +10,9 @@ using TMPro;
 
 public static class VerdantV15CumulativeUpgrade
 {
-    private const string TargetVersion = "15.2.0";
+    private const string FallbackTargetVersion = "15.2.0";
     private const string VersionPath = "Assets/VerdantBoard/VERSION.txt";
+    private const string VpmPackageManifestPath = "Packages/com.sorakaito.verdant/package.json";
     private const string BackupFolder = "Assets/VerdantBoard/Generated/V15 Backups";
 
     [MenuItem("Tools/Verdant Board/Updates/Run V15.2 Cumulative Upgrade", priority = 1)]
@@ -39,6 +40,7 @@ public static class VerdantV15CumulativeUpgrade
         }
 
         CreateBackup(scene);
+        string targetVersion = GetTargetVersion();
 
         int rc1Changes = 0;
         int rc2Changes = 0;
@@ -80,7 +82,7 @@ public static class VerdantV15CumulativeUpgrade
         }
 
         if (!migrationFailed)
-            StampVersion(scene, TargetVersion);
+            StampVersion(scene, targetVersion);
 
         EditorSceneManager.MarkSceneDirty(scene);
         if (!string.IsNullOrEmpty(scene.path))
@@ -91,7 +93,7 @@ public static class VerdantV15CumulativeUpgrade
 
         string summary =
             "Verdant cumulative upgrade finished.\n\n" +
-            "Target version: " + TargetVersion + "\n" +
+            "Target version: " + targetVersion + "\n" +
             "RC1 media/stability actions: " + rc1Changes + "\n" +
             "RC2 UI/media actions: " + rc2Changes + "\n" +
             "RC3 YouTube cleanup actions: " + rc3Changes + "\n" +
@@ -211,6 +213,33 @@ public static class VerdantV15CumulativeUpgrade
     private static int IntResult(object value)
     {
         return value is int ? (int)value : 0;
+    }
+
+    [Serializable]
+    private class PackageVersionManifest
+    {
+        public string version;
+    }
+
+    private static string GetTargetVersion()
+    {
+        try
+        {
+            if (File.Exists(VpmPackageManifestPath))
+            {
+                PackageVersionManifest manifest =
+                    JsonUtility.FromJson<PackageVersionManifest>(File.ReadAllText(VpmPackageManifestPath));
+
+                if (manifest != null && !string.IsNullOrWhiteSpace(manifest.version))
+                    return manifest.version.Trim();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning("[Verdant Cumulative] Could not read VPM package version: " + ex.Message);
+        }
+
+        return FallbackTargetVersion;
     }
 
     private static void StampVersion(Scene scene, string version)
