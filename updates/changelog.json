@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.5",
+  "latestVersion": "15.4.6",
   "entries": [
+    {
+      "version": "15.4.6",
+      "date": "2026-10-28",
+      "name": "Menu Recovery + Udon Runtime Safety",
+      "changes": [
+        "Removed unsupported generic collections from UdonSharp runtime code",
+        "Removed unsupported mouseScrollDelta polling from UdonSharp runtime code",
+        "Moved dropdown option parsing to Editor-only code",
+        "Added an independent Editor bootstrap assembly for Verdant diagnostics/menu recovery",
+        "Kept VerdantRoleAuthority and the repaired Runtime/Editor assembly structure"
+      ]
+    },
     {
       "version": "15.4.5",
       "date": "2026-10-28",
