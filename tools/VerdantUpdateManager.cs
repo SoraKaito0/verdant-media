@@ -21,6 +21,8 @@ public class VerdantUpdateManager : EditorWindow
         public string packageType;
         public string minimumPatchVersion;
         public string packageUrl;
+        public string cumulativePackageUrl;
+        public string cumulativePackageVersion;
         public string releasePageUrl;
         public string message;
         public string[] notes;
@@ -33,6 +35,7 @@ public class VerdantUpdateManager : EditorWindow
     private string status = "Not checked yet.";
     private bool downloadingPackage;
     private string pendingPackagePath;
+    private bool downloadingCumulative;
     private Vector2 scroll;
 
     [MenuItem("Tools/Verdant Board/Updates/Update Manager", priority = 10)]
@@ -87,11 +90,14 @@ public class VerdantUpdateManager : EditorWindow
                 if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
                 File.WriteAllBytes(pendingPackagePath, bytes);
 
-                status = "Download complete. Opening Unity package import...";
-                Debug.Log("[Verdant Update Manager] Downloaded update package to " + pendingPackagePath);
+                status = downloadingCumulative
+                    ? "Cumulative download complete. Opening Unity package import..."
+                    : "Download complete. Opening Unity package import...";
+                Debug.Log("[Verdant Update Manager] Downloaded " + (downloadingCumulative ? "cumulative " : "") + "update package to " + pendingPackagePath);
 
                 DisposeRequest();
                 downloadingPackage = false;
+                downloadingCumulative = false;
                 AssetDatabase.ImportPackage(pendingPackagePath, true);
                 Repaint();
                 return;
@@ -102,6 +108,7 @@ public class VerdantUpdateManager : EditorWindow
                 Debug.LogException(ex);
                 DisposeRequest();
                 downloadingPackage = false;
+                downloadingCumulative = false;
                 Repaint();
                 return;
             }
@@ -153,6 +160,8 @@ public class VerdantUpdateManager : EditorWindow
         {
             EditorGUILayout.LabelField("Installed version", string.IsNullOrEmpty(localVersion) ? "Legacy / unknown" : localVersion);
             EditorGUILayout.LabelField("Latest published", manifest != null ? manifest.latestVersion : "Not loaded");
+            if (manifest != null && !string.IsNullOrWhiteSpace(manifest.cumulativePackageVersion))
+                EditorGUILayout.LabelField("Cumulative base", manifest.cumulativePackageVersion);
             if (manifest != null && !string.IsNullOrWhiteSpace(manifest.releaseName))
                 EditorGUILayout.LabelField("Release", manifest.releaseName);
             if (manifest != null && !string.IsNullOrWhiteSpace(manifest.published))
@@ -196,6 +205,11 @@ public class VerdantUpdateManager : EditorWindow
 
         EditorGUILayout.Space(10);
 
+        bool needsCumulative =
+            manifest != null &&
+            !string.IsNullOrWhiteSpace(manifest.minimumPatchVersion) &&
+            CompareVersions(localVersion, manifest.minimumPatchVersion) < 0;
+
         using (new EditorGUILayout.HorizontalScope())
         {
             GUI.enabled = request == null;
@@ -203,12 +217,19 @@ public class VerdantUpdateManager : EditorWindow
                 CheckForUpdates();
 
             GUI.enabled = manifest != null &&
-                          !string.IsNullOrWhiteSpace(manifest.packageUrl) &&
                           request == null &&
-                          CompareVersions(localVersion, manifest.latestVersion) < 0;
+                          CompareVersions(localVersion, manifest.latestVersion) < 0 &&
+                          ((!needsCumulative && !string.IsNullOrWhiteSpace(manifest.packageUrl)) ||
+                           (needsCumulative && !string.IsNullOrWhiteSpace(manifest.cumulativePackageUrl)));
 
-            if (GUILayout.Button("Download + Import Latest", GUILayout.Height(32f)))
-                DownloadLatestPackage();
+            string updateLabel = needsCumulative ? "Download + Import Cumulative" : "Download + Import Latest";
+            if (GUILayout.Button(updateLabel, GUILayout.Height(32f)))
+            {
+                if (needsCumulative)
+                    DownloadCumulativePackage();
+                else
+                    DownloadLatestPackage();
+            }
 
             GUI.enabled = true;
         }
@@ -271,9 +292,40 @@ public class VerdantUpdateManager : EditorWindow
 
         pendingPackagePath = Path.Combine(Directory.GetCurrentDirectory(), "Library", "VerdantUpdates", fileName);
         status = "Downloading " + manifest.latestVersion + "...";
+        downloadingCumulative = false;
 
         string separator = manifest.packageUrl.Contains("?") ? "&" : "?";
         request = UnityWebRequest.Get(manifest.packageUrl + separator + "t=" + DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+        request.timeout = 120;
+        operation = request.SendWebRequest();
+        downloadingPackage = true;
+        Repaint();
+    }
+
+    private void DownloadCumulativePackage()
+    {
+        if (manifest == null || string.IsNullOrWhiteSpace(manifest.cumulativePackageUrl) || request != null) return;
+
+        string fileName;
+        try
+        {
+            Uri uri = new Uri(manifest.cumulativePackageUrl);
+            fileName = Path.GetFileName(uri.LocalPath);
+        }
+        catch
+        {
+            fileName = "Verdant_Cumulative_" + (string.IsNullOrWhiteSpace(manifest.cumulativePackageVersion) ? manifest.latestVersion : manifest.cumulativePackageVersion).Replace(".", "_") + ".unitypackage";
+        }
+
+        if (string.IsNullOrWhiteSpace(fileName) || !fileName.EndsWith(".unitypackage", StringComparison.OrdinalIgnoreCase))
+            fileName = "Verdant_Cumulative_" + manifest.latestVersion.Replace(".", "_") + ".unitypackage";
+
+        pendingPackagePath = Path.Combine(Directory.GetCurrentDirectory(), "Library", "VerdantUpdates", fileName);
+        status = "Downloading cumulative Verdant upgrade...";
+        downloadingCumulative = true;
+
+        string separator = manifest.cumulativePackageUrl.Contains("?") ? "&" : "?";
+        request = UnityWebRequest.Get(manifest.cumulativePackageUrl + separator + "t=" + DateTimeOffset.UtcNow.ToUnixTimeSeconds());
         request.timeout = 120;
         operation = request.SendWebRequest();
         downloadingPackage = true;
