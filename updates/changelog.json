@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.2",
+  "latestVersion": "15.4.3",
   "entries": [
+    {
+      "version": "15.4.3",
+      "date": "2026-10-28",
+      "name": "Collision-Proof VPM Tools Hotfix",
+      "changes": [
+        "Renamed VPM package classes so legacy extracted Verdant scripts cannot create duplicate-class errors",
+        "Removed collision-prone VRCLinking/editor classes from the VPM hotfix package",
+        "Added a minimal Diagnostics > Show VPM Status menu to verify editor-tool loading",
+        "Kept the supporter-scroll, shared-clock and Main Board version fixes in a uniquely named installer"
+      ]
+    },
     {
       "version": "15.4.2",
       "date": "2026-10-28",
