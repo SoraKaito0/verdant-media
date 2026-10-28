@@ -1,7 +1,20 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "13.2.5",
+  "latestVersion": "15.2.0",
   "entries": [
+    {
+      "version": "15.2.0",
+      "date": "2026-10-28",
+      "name": "Ad Catalogue + Update Manager",
+      "changes": [
+        "Added ad-03 to the remote ad rotation while keeping the retired ad-01 poster ignored",
+        "Added automatic GitHub ad-catalogue syncing for future poster uploads",
+        "Added Verdant Update Manager with current/latest version display and Download + Import Latest button",
+        "Added a persistent Assets/VerdantBoard/VERSION.txt marker for extracted/copied Verdant projects",
+        "Included V15 RC3 YouTube layer cleanup to remove unnecessary blocking/darkening UI layers rather than stacking more panels",
+        "Updated VRCLinking supporter-role defaults to Tier Basic, Tier Supporter, Tier VIP, Tier Elite and Tier Guardian"
+      ]
+    },
     {
       "version": "13.2.5",
       "date": "2026-10-08",
