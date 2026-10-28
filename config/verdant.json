@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.4.8",
+  "latestVersion": "15.4.9",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -47,5 +47,5 @@
     "latest": "updates/latest.json",
     "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.4.8 fixes supporter-layout reversion/stutter and the missing Main Board version label."
+  "message": "Verdant V15.4.9 adds a styled Main Board version card and synchronizes the iPad version display."
 }
