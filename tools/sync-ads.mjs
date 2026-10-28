@@ -12,6 +12,13 @@ catalog.schemaVersion ??= 1;
 catalog.enabled ??= true;
 catalog.defaultDisplaySeconds ??= 12;
 catalog.items ??= [];
+catalog.ignoredImages ??= [];
+
+const ignored = new Set(
+  catalog.ignoredImages
+    .filter(value => typeof value === 'string')
+    .map(value => value.replaceAll('\\\\', '/').toLowerCase())
+);
 
 const existingByImage = new Map(
   catalog.items
@@ -28,7 +35,7 @@ let added = 0;
 for (const file of files) {
   const image = `ads/posters/${file}`;
   const key = image.toLowerCase();
-  if (existingByImage.has(key)) continue;
+  if (existingByImage.has(key) || ignored.has(key)) continue;
 
   const base = path.basename(file, path.extname(file));
   const pretty = base
