@@ -1,0 +1,42 @@
+name: Sync Verdant ad catalogue
+
+on:
+  push:
+    paths:
+      - "ads/posters/**"
+      - "tools/sync-ads.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Verdant media
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync posters into ads.json
+        run: node tools/sync-ads.mjs
+
+      - name: Commit catalogue change
+        shell: bash
+        run: |
+          if git diff --quiet -- ads/ads.json; then
+            echo "Catalogue already up to date."
+            exit 0
+          fi
+
+          git config user.name "verdant-media-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add ads/ads.json
+          git commit -m "ads: sync poster catalogue"
+          git push
