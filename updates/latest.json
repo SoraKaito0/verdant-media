@@ -1,20 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.0",
-  "releaseName": "Supporter Scroll + Shared Clock Fix",
+  "latestVersion": "15.4.1",
+  "releaseName": "Legacy Script Cleanup Hotfix",
   "published": "2026-10-28",
   "channel": "stable",
   "packageType": "patch",
   "minimumPatchVersion": "15.0.0",
   "packageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Ad_Update_Manager.unitypackage",
   "releasePageUrl": "https://github.com/SoraKaito0/verdant-media/tree/main/releases",
-  "message": "Verdant 15.4.0 is available through VCC. Update Verdant World System, then run the V15.4 Supporter Scroll + Clock Sync Fix once in Unity.",
+  "message": "Verdant 15.4.1 fixes duplicate-class compile errors when VCC is installed over older extracted Verdant UnityPackage files.",
   "notes": [
-    "Supporter/member name lists no longer snap back to the top during runtime refreshes.",
-    "Main Board and iPad clock displays now use one shared local clock controller.",
-    "Changing 12/24-hour format propagates to all linked Verdant clock displays.",
-    "Clock output uses local machine time instead of a manual UTC offset, avoiding daylight-saving drift.",
-    "The V15.4 installer makes a scene backup before changing references."
+    "Legacy Verdant-managed scripts are now removed by exact path during VCC migration instead of relying on GUID matching.",
+    "Fixes duplicate VerdantVRCLinkingInstaller compile errors between Assets and Packages.",
+    "Keeps scene objects, cats, supporter props, lighting and world-specific assets untouched.",
+    "Includes the V15.4 supporter-scroll and shared-clock fixes."
   ],
   "cumulativePackageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Cumulative_Upgrade_Base.unitypackage",
   "cumulativePackageVersion": "15.2.0",
