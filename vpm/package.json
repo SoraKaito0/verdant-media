@@ -1,18 +1,18 @@
 {
   "name": "com.sorakaito.verdant",
   "displayName": "Verdant World System",
-  "version": "15.3.0",
+  "version": "15.4.0",
   "author": {
     "name": "SoraKaito0",
     "email": "59507954+SoraKaito0@users.noreply.github.com",
     "url": "https://github.com/SoraKaito0"
   },
   "unity": "2022.3",
-  "description": "Verdant editor/runtime framework for VRChat worlds, including update and migration tools, media/UI repair utilities, supporter/staff role authority, and optional VRCLinking integration.",
+  "description": "Verdant core tools and runtime integrations for VRChat worlds. V15.4 fixes supporter-list scroll resets and unifies Main Board/iPad clock state.",
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.10.0"
   },
-  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.3.0.zip",
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.0.zip",
   "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
   "keywords": [
     "VRChat",
