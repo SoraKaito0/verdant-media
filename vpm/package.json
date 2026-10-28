@@ -1,0 +1,35 @@
+{
+  "name": "com.sorakaito.verdant",
+  "displayName": "Verdant World System",
+  "version": "15.3.0",
+  "author": {
+    "name": "SoraKaito0",
+    "email": "59507954+SoraKaito0@users.noreply.github.com",
+    "url": "https://github.com/SoraKaito0"
+  },
+  "unity": "2022.3",
+  "description": "Verdant editor/runtime framework for VRChat worlds, including update and migration tools, media/UI repair utilities, supporter/staff role authority, and optional VRCLinking integration.",
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.10.0"
+  },
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.3.0.zip",
+  "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
+  "keywords": [
+    "VRChat",
+    "Verdant",
+    "World",
+    "UdonSharp",
+    "VCC",
+    "VPM"
+  ],
+  "legacyFiles": {
+    "Assets/VerdantBoard/Editor/VerdantUpdateManager.cs": "9df92f31b0d24e9db1548b7a8f9432f1",
+    "Assets/VerdantBoard/Editor/VerdantV15ReleaseFinalizer.cs": "7d08c1d82f0f4f9b9b4f2df4fe9ad150",
+    "Assets/VerdantBoard/Editor/VerdantV15RC2UIRepair.cs": "83db9209e3474fe8b186cd29775d2102",
+    "Assets/VerdantBoard/Editor/VerdantV15RC3YoutubeLayerCleanup.cs": "3cb01741c6a54d8b9654e421c8bcc4d2",
+    "Assets/VerdantBoard/Editor/VerdantV15CumulativeUpgrade.cs": "b61322a35a914eaaafce8425a9f42402",
+    "Assets/VerdantBoard/Editor/VerdantVRCLinkingInstaller.cs": "9670e713f26b45bb98303fcebc6f6df2",
+    "Assets/VerdantBoard/Scripts/Integrations/VerdantRoleAuthority.cs": "f1b2d81581254e389b83f47fc3b47221",
+    "Assets/VerdantBoard/VERSION.txt": "4a5fd941ab9242739b4ad2ab9744db31"
+  }
+}
