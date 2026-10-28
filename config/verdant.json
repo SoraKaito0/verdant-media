@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "networkId": "VERDANT_PUBLIC",
   "displayName": "Verdant",
-  "latestVersion": "15.4.0",
+  "latestVersion": "15.4.1",
   "baseUrl": "https://sorakaito0.github.io/verdant-media/",
   "features": {
     "announcements": true,
@@ -47,5 +47,5 @@
     "latest": "updates/latest.json",
     "vpmRepository": "index.json"
   },
-  "message": "Verdant V15.4.0 fixes supporter-list scroll resets and synchronizes the Main Board/iPad clock."
+  "message": "Verdant V15.4.1 fixes VCC migration duplicate-script compile errors."
 }
