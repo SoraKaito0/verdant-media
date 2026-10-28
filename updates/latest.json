@@ -1,19 +1,20 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.3",
-  "releaseName": "Collision-Proof VPM Tools Hotfix",
+  "latestVersion": "15.4.4",
+  "releaseName": "VPM Assembly + Role Authority Repair",
   "published": "2026-10-28",
   "channel": "stable",
   "packageType": "patch",
   "minimumPatchVersion": "15.0.0",
   "packageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Ad_Update_Manager.unitypackage",
   "releasePageUrl": "https://github.com/SoraKaito0/verdant-media/tree/main/releases",
-  "message": "Verdant 15.4.3 fixes missing Tools menus caused by old extracted Verdant scripts colliding with the VCC package.",
+  "message": "Verdant 15.4.4 repairs the VCC package structure so Editor tools compile from Packages and restores VerdantRoleAuthority required by the VRCLinking bridge.",
   "notes": [
-    "VPM runtime/editor classes now use unique package-specific names.",
-    "Old Assets/VerdantBoard scripts can remain without duplicating the same package class names.",
-    "Adds Tools > Verdant Board > Diagnostics > Show VPM Status so package load can be confirmed immediately.",
-    "Includes the supporter scroll, shared clock and Main Board version-label installer."
+    "Adds Verdant.Runtime.asmdef and Verdant.Editor.asmdef.",
+    "Adds the matching UdonSharp assembly registration asset for Verdant.Runtime.",
+    "Restores VerdantRoleAuthority inside the VPM Runtime package with its original Unity GUID.",
+    "Keeps the collision-proof supporter scroll, shared clock and Main Board version installer.",
+    "Fixes the missing Tools > Verdant Board menu caused by package scripts not belonging to an assembly."
   ],
   "cumulativePackageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Cumulative_Upgrade_Base.unitypackage",
   "cumulativePackageVersion": "15.2.0",
