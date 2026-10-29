@@ -1,7 +1,18 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.11",
+  "latestVersion": "15.4.12",
   "entries": [
+    {
+      "version": "15.4.12",
+      "date": "2026-10-29",
+      "name": "Left Header Version & Supporter Scroll Adjustment",
+      "changes": [
+        "Move VERSION to left side of PLAYERS",
+        "Prioritize tiered supporter layout over older duplicate",
+        "Disable scroll keeper top-threshold reset",
+        "Preserve previous 15.4.11 distance fixes"
+      ]
+    },
     {
       "version": "15.4.11",
       "date": "2026-10-29",
