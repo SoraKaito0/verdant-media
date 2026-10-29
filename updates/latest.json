@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.11",
-  "releaseName": "Top Header Version + Persistent Main Board and iPad",
+  "latestVersion": "15.4.12",
+  "releaseName": "Left-side Version Card and Supporter Scroll Improvements",
   "published": "2026-10-29",
   "channel": "stable",
   "packageType": "patch",
   "minimumPatchVersion": "15.0.0",
   "packageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Ad_Update_Manager.unitypackage",
   "releasePageUrl": "https://github.com/SoraKaito0/verdant-media/tree/main/releases",
-  "message": "Verdant 15.4.11 moves the version card to the top beside PLAYERS and patches legacy Main Board and iPad distance-hiding source. Apply the installer and validate in Unity.",
+  "message": "Verdant 15.4.12 places the VERSION card left of PLAYERS and improves selection of the coloured supporter layout and top scrolling. Apply in Unity and test before publishing your VRChat world.",
   "notes": [
-    "Places version card beside the top PLAYERS card using parent-relative coordinates.",
-    "Disables source-based distance minimisation in VerdantBoard.cs.",
-    "Keeps the VerdantTablet.cs screen visible irrespective of player proximity.",
-    "Retains manually controlled UI options, supporter state and clock system.",
-    "Back up the Unity project before applying; Unity and UdonSharp testing is still required."
+    "Place VERSION on the left of PLAYERS with matching header styling.",
+    "Prefer supporter layouts containing the coloured membership tiers.",
+    "Disable supporter ownership top-threshold snapping.",
+    "Retain the 15.4.11 Main Board and iPad distance-hide source patches.",
+    "Unity and UdonSharp runtime validation are still required."
   ],
   "cumulativePackageUrl": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/releases/Verdant_V15_2_0_Cumulative_Upgrade_Base.unitypackage",
   "cumulativePackageVersion": "15.2.0",
