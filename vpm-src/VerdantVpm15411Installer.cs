@@ -1110,14 +1110,14 @@ public static class VerdantVpm15411Installer
         changed += PatchSourceFile(tabletPath,
             "if(board!=null)board.Initialize();ShowPage(0);Refresh();",
             "if(board!=null)board.Initialize();if(screen!=null)screen.SetActive(true);ShowPage(0);Refresh();");
-        const string oldTablet = "bool awake=pickup!=null&&pickup.IsHeld;\\n" +
-            "        if(!awake&&Utilities.IsValid(Networking.LocalPlayer))awake=Vector3.Distance(Networking.LocalPlayer.GetPosition(),transform.position)<=Mathf.Max(1,screenWakeDistance);\\n" +
-            "        if(screen!=null&&screen.activeSelf!=awake)screen.SetActive(awake);\\n" +
+        const string oldTablet = "bool awake=pickup!=null&&pickup.IsHeld;\n" +
+            "        if(!awake&&Utilities.IsValid(Networking.LocalPlayer))awake=Vector3.Distance(Networking.LocalPlayer.GetPosition(),transform.position)<=Mathf.Max(1,screenWakeDistance);\n" +
+            "        if(screen!=null&&screen.activeSelf!=awake)screen.SetActive(awake);\n" +
             "        if(awake)Refresh();";
-        const string newTablet = "// Distance-based tablet hiding removed.\\n" +
-            "        if(screen!=null&&!screen.activeSelf)screen.SetActive(true);\\n" +
+        const string newTablet = "// Distance-based tablet hiding removed.\n" +
+            "        if(screen!=null&&!screen.activeSelf)screen.SetActive(true);\n" +
             "        Refresh();";
-        changed += PatchSourceFile(tabletPath, oldTablet.Replace("\\n", "\\n"), newTablet.Replace("\\n", "\\n"));
+        changed += PatchSourceFile(tabletPath, oldTablet, newTablet);
         return changed;
     }
 
@@ -1129,7 +1129,7 @@ public static class VerdantVpm15411Installer
             return 0;
         }
         string original = System.IO.File.ReadAllText(path);
-        string normalized = original.Replace("\\r\\n", "\\n");
+        string normalized = original.Replace("\r\n", "\n");
         if (!normalized.Contains(from))
         {
             if (!normalized.Contains(to))
