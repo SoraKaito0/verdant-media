@@ -1,0 +1,31 @@
+name: Build Verdant 15.4.11 VPM Candidate
+on:
+  push:
+    branches: [fix/verdant-15.4.11]
+    paths:
+      - 'vpm-src/**'
+      - 'tools/build-vpm-15411.py'
+      - 'vpm/package.json'
+      - 'index.json'
+      - '.github/workflows/build-verdant-15411.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build and validate archive
+        run: python tools/build-vpm-15411.py
+      - name: Commit generated candidate ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vpm/releases/com.sorakaito.verdant-15.4.11.zip
+          git diff --cached --quiet || (git commit -m "Build Verdant 15.4.11 VPM release candidate" && git push)
