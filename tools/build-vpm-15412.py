@@ -9,7 +9,7 @@ new_zip = root / "vpm/releases/com.sorakaito.verdant-15.4.12.zip"
 with ZipFile(old_zip) as source:
     files = {name: source.read(name) for name in source.namelist()}
 old = "Editor/VerdantVpm15411Installer.cs"
-new = "Editor/VerdantVpm15411Installer.cs"
+new = "Editor/VerdantVpm15412Installer.cs"
 assert old in files and old + ".meta" in files
 files[new] = (root / "vpm-src/VerdantVpm15412Installer.cs").read_bytes()
 files[new + ".meta"] = files.pop(old + ".meta")
