@@ -33,7 +33,11 @@ public static class VerdantVpm15412Installer
         TMP_Text preflightLabel;
         if (preflightCanvas == null || FindPlayersCard(preflightCanvas, out preflightLabel) == null || FindTabletRoot(scene) == null)
         {
-            EditorUtility.DisplayDialog("Verdant 15.4.12", "Main Board PLAYERS card or iPad not found. No changes applied.", "OK");
+            Debug.LogWarning("Verdant board preflight: board=" + (preflightBoard == null ? "NOT FOUND" : PathOf(preflightBoard)) +
+                ", canvas=" + (preflightCanvas == null ? "NOT FOUND" : PathOf(preflightCanvas)) +
+                ", PLAYERS=" + (preflightCanvas == null ? "NOT FOUND" : (FindPlayersCard(preflightCanvas, out preflightLabel) == null ? "NOT FOUND" : "FOUND")) +
+                ", tablet=" + (FindTabletRoot(scene) == null ? "NOT FOUND" : PathOf(FindTabletRoot(scene))) +
+                ". No changes applied.");
             return;
         }
         CreateBackup(scene);
@@ -736,7 +740,7 @@ public static class VerdantVpm15412Installer
         playersLabel = boardCanvas.GetComponentsInChildren<TMP_Text>(true)
             .FirstOrDefault(t =>
                 t != null &&
-                string.Equals((t.text ?? "").Trim(), "PLAYERS", StringComparison.OrdinalIgnoreCase));
+                (t.text ?? "").Trim().StartsWith("PLAYERS", StringComparison.OrdinalIgnoreCase));
 
         if (playersLabel == null)
             return null;
@@ -910,6 +914,27 @@ public static class VerdantVpm15412Installer
 
     private static Transform FindMainBoardRoot(Scene scene)
     {
+        // Find the LIVE board's PLAYERS header first; the component-only lookup can
+        // return a settings container or an inactive Previous interface (backup).
+        TMP_Text[] livePlayers = Resources.FindObjectsOfTypeAll<TMP_Text>()
+            .Where(t => t != null && t.gameObject.scene == scene
+                && t.gameObject.activeInHierarchy
+                && (t.text ?? "").Trim().StartsWith("PLAYERS", StringComparison.OrdinalIgnoreCase)
+                && PathOf(t.transform).ToLowerInvariant().Contains("verdant")
+                && !NameLooksLegacy(PathOf(t.transform)))
+            .ToArray();
+        foreach (TMP_Text label in livePlayers)
+        {
+            Canvas host = label.GetComponentInParent<Canvas>();
+            if (host == null) continue;
+            RectTransform canvasRect = host.transform as RectTransform;
+            TMP_Text matched;
+            if (canvasRect != null && FindPlayersCard(canvasRect, out matched) != null)
+            {
+                Debug.Log("Verdant detected live board canvas: " + PathOf(host.transform), host);
+                return host.transform;
+            }
+        }
         Transform byType = FindComponentTransformByTypeName(scene, "VerdantBoard");
         if (byType != null) return byType;
 
