@@ -1,7 +1,17 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.10",
+  "latestVersion": "15.4.11",
   "entries": [
+    {
+      "version": "15.4.11",
+      "date": "2026-10-29",
+      "name": "Top Header Version + Persistent Main Board and iPad",
+      "changes": [
+        "Position VERSION beside PLAYERS using header-relative bounds",
+        "Patch legacy Main Board auto-minimise source and iPad wake-distance logic",
+        "Preserve manual controls, supporter board and shared clock"
+      ]
+    },
     {
       "version": "15.4.10",
       "date": "2026-10-29",
