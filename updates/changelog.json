@@ -1,7 +1,19 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "15.4.9",
+  "latestVersion": "15.4.10",
   "entries": [
+    {
+      "version": "15.4.10",
+      "date": "2026-10-29",
+      "name": "PLAYERS Header Version Card + Distance Visibility Migration",
+      "changes": [
+        "Place the Main Board version card beside PLAYERS in its parent coordinate space",
+        "Copy PLAYERS Image settings, corners, material and graphic effects",
+        "Disable recognized distance-hiding flags on Main Board and iPad controllers with diagnostics for unrecognized fields",
+        "Preserve the existing supporter ownership and shared clock runtime files",
+        "Update installer and bootstrap diagnostics to 15.4.10; Unity/UdonSharp and in-world validation required before release"
+      ]
+    },
     {
       "version": "15.4.9",
       "date": "2026-10-28",

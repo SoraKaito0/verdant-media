@@ -8,7 +8,7 @@ Package:
 
 - **Verdant World System**
 - ID: `com.sorakaito.verdant`
-- Current version: **15.3.0**
+- Current version: **15.4.10**
 
 ## Add to Creator Companion
 
