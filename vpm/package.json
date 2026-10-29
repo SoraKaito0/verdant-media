@@ -1,18 +1,18 @@
 {
   "name": "com.sorakaito.verdant",
   "displayName": "Verdant World System",
-  "version": "15.4.11",
+  "version": "15.4.12",
   "author": {
     "name": "SoraKaito0",
     "email": "59507954+SoraKaito0@users.noreply.github.com",
     "url": "https://github.com/SoraKaito0"
   },
   "unity": "2022.3",
-  "description": "Verdant 15.4.11 places VERSION next to the top PLAYERS control and patches source-based distance hiding for Main Board and iPad.",
+  "description": "Verdant 15.4.12 positions VERSION left of PLAYERS and improves supporter tier selection and scrolling.",
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.10.0"
   },
-  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.11.zip",
+  "url": "https://raw.githubusercontent.com/SoraKaito0/verdant-media/main/vpm/releases/com.sorakaito.verdant-15.4.12.zip",
   "changelogUrl": "https://sorakaito0.github.io/verdant-media/updates/changelog.json",
   "keywords": [
     "VRChat",

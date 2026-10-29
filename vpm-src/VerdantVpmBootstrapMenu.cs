@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class VerdantVpmBootstrapMenu
 {
-    private const string Version = "15.4.11";
+    private const string Version = "15.4.12";
 
     [MenuItem("Tools/Verdant Board/Diagnostics/Package Status", priority = 0)]
     public static void PackageStatus()
