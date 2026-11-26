@@ -1,59 +1,21 @@
-# Verdant Media — V12 GitHub Pages
+# Verdant Network — Remote Content
 
-This repository is the shared remote content layer for Verdant.
+Remote community content for Verdant-enabled VRChat worlds.
 
-Base URL:
-https://sorakaito0.github.io/verdant-media/
+**Latest published system version shown on the site:** 15.4.12 (29 October 2026). This is the latest version in the public release metadata; private development builds may differ.
 
-Recommended structure:
+The public pages are informational and do not advertise, link to, or distribute Verdant installation packages. Package distribution is managed separately.
 
-verdant-media/
-├── ads/
-│   ├── posters/
-│   └── ads.json
-├── announcements/
-│   ├── archive/
-│   ├── announcements.json
-│   └── current.txt
-├── backdrops/
-├── badges/
-│   ├── icons/
-│   └── badges.json
-├── banners/
-├── config/
-│   ├── modules.json
-│   ├── verdant.json
-│   └── worlds.json
-├── gallery/
-│   ├── photos/
-│   └── gallery.json
-├── media/
-│   ├── thumbnails/
-│   ├── featured.json
-│   └── radio.json
-├── posters/
-├── supporters/
-│   ├── perks.json
-│   └── supporters.json
-├── themes/
-│   ├── previews/
-│   └── themes.json
-├── updates/
-│   ├── changelog.json
-│   └── status.json
-├── .nojekyll
-├── index.html
-├── MIGRATION.md
-└── README.md
+## Public content
 
-What changed:
-- Keep: ads, announcements, backdrops, badges, banners, config, gallery, posters.
-- Remove/archive: catalog/ (old Movies/TV experiment).
-- New: supporters, themes, media, updates, badge icons, ad posters, gallery photos, announcement archive.
+This repository hosts materials such as announcements, image galleries, supporter badges, backgrounds, advertising artwork and configuration JSON used by Verdant worlds.
 
-Important:
-Everything here is public. Never store passwords, tokens, private keys, or secure staff credentials in this repo.
+## Security and access
 
-## V12.3 remote backgrounds
+**This GitHub repository is public.** Any files committed to it, including historical files, may be viewed or downloaded through GitHub regardless of whether they are linked from the website. Do not put credentials, secrets, private staff information or proprietary-only source/package files in this public repository.
 
-Verdant V12.3 reads `config/backgrounds.json` directly. Remote background cards start with a template/black preview and replace it with the configured GitHub thumbnail when loaded. Free and Patreon-tier backgrounds can live together in the same manifest, and new backgrounds can be added without rebuilding the Unity UI.
+## Project
+
+Verdant is a VRChat world interface and community system with UI, media, personalisation and supporter features.
+
+Copyright notices and licences for system code and third-party assets remain applicable. Removing links from the website does not change their permissions.
