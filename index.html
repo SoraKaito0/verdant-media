@@ -3,33 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Verdant Network — remote content and community updates for Verdant VRChat worlds.">
+<meta name="description" content="Verdant Network: VRChat world interface, community features, and remote content.">
 <title>Verdant Network</title>
 <style>
-:root{color-scheme:dark}
-body{font-family:system-ui,-apple-system,sans-serif;background:#07140d;color:#dff7df;max-width:900px;margin:60px auto;padding:0 24px;line-height:1.6}
-.card{background:#0d2116;padding:20px 24px;border:1px solid #21432c;border-radius:14px;margin:16px 0}
-h1{margin-bottom:4px}h2{font-size:1.1rem;margin:0 0 10px}
-.subtle{color:#a9c6b1}small{opacity:.8}
+:root{color-scheme:dark}*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#07140d;color:#e2f4e5;max-width:980px;margin:0 auto;padding:52px 22px 80px;line-height:1.6}
+h1{font-size:2.1rem;letter-spacing:-.04em;margin:0}h2{font-size:1.18rem;margin:0 0 12px}
+p{margin:8px 0}header{margin-bottom:28px}
+.muted{color:#a9c6b1}.eyebrow{color:#9fcc9d;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;font-weight:700}
+.card{background:#0d2116;border:1px solid #244434;border-radius:15px;padding:22px 25px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}
+.grid .card{margin:0}.version{font-weight:700;color:#bce5a8}
+code{background:#152c1c;color:#cceccd;padding:.2em .45em;border-radius:5px;font-size:.86em;overflow-wrap:anywhere}
+dl{display:grid;grid-template-columns:minmax(125px,190px) 1fr;gap:9px 16px;margin:0}dt{font-weight:650}dd{margin:0;color:#b9d0bd}
+footer{margin-top:35px;color:#89a891;font-size:.9rem}
+@media(max-width:550px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}}
 </style>
 </head>
 <body>
+<header>
+<div class="eyebrow">VRChat World Systems</div>
 <h1>Verdant Network</h1>
-<p class="subtle">Community updates and remote content for Verdant-enabled VRChat worlds.</p>
+<p class="muted">World interfaces, community features and remote media.</p>
+</header>
 <section class="card">
-<h2>System status</h2>
-<p>Verdant Network content service: Online</p>
-<p><strong>Latest published system version:</strong> 15.4.12</p>
-<small>Last listed release: 29 October 2026. Newer private development builds may exist.</small>
+<h2>Verdant World System <span class="version">v15.4.12</span></h2>
+<p>Verdant brings world controls, media, personalisation and community tools together through a shared Main Board and tablet interface. The system includes supporter displays, interactive menus and staff-facing world utilities.</p>
+<p class="muted">Public release record: 29 October 2026</p>
+</section>
+<section class="grid">
+<div class="card"><h2>World Interface</h2><p>Main Board and tablet controls for settings, navigation, mirrors and world interaction.</p></div>
+<div class="card"><h2>Media &amp; Activities</h2><p>Video controls, shared media, radio, galleries, music visualisation and utility modules.</p></div>
+<div class="card"><h2>Community &amp; Supporters</h2><p>Announcements, supporter recognition, membership displays, artwork and community information.</p></div>
+<div class="card"><h2>World Management</h2><p>Staff-facing controls, configured roles and world moderation tools.</p></div>
 </section>
 <section class="card">
-<h2>About Verdant</h2>
-<p>Verdant is a VRChat world interface and community system featuring interactive menus, media controls, personalisation, supporter recognition and world management tools.</p>
-<p>Development builds and installation packages are distributed separately and are not offered on this page.</p>
+<h2>Remote Content Files</h2>
+<p class="muted">The network hosts data and media used by Verdant-enabled worlds.</p>
+<dl>
+<dt><code>config/</code></dt><dd>System configuration, module definitions, world lists and staff/supporter data.</dd>
+<dt><code>announcements/</code></dt><dd>Current announcements and archived community notices.</dd>
+<dt><code>ads/</code></dt><dd>Community poster artwork and display rotation data.</dd>
+<dt><code>badges/</code></dt><dd>Supporter badge images and badge definitions.</dd>
+<dt><code>supporters/</code></dt><dd>Supporter displays and membership benefit definitions.</dd>
+<dt><code>gallery/</code></dt><dd>Image galleries and photo manifests.</dd>
+<dt><code>media/</code></dt><dd>Featured media, radio listings and thumbnails.</dd>
+<dt><code>themes/</code></dt><dd>Theme definitions and visual previews.</dd>
+<dt><code>updates/</code></dt><dd>Version information, system status and change history.</dd>
+</dl>
 </section>
-<section class="card">
-<h2>Community content</h2>
-<p>This site supports announcements, artwork, backgrounds and other remote content used by Verdant worlds.</p>
-</section>
+<footer>Verdant Network · SoraKaito0</footer>
 </body>
 </html>
